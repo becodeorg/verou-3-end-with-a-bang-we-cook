@@ -17,7 +17,7 @@ let day = () => {
 // day();
 
 
-//  what should i do for the groceryList
+//  What should i do for the groceryList
 
 // TODO events on Card in random Card Pick 
 // TODO Look in Variables for links
