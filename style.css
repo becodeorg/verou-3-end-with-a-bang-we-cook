@@ -1,4 +1,31 @@
+:root{
+    --color-dark: #2E1A1E;
+    --color-highlight: #D35A2A;
+    --color-neutral: #EBEBEB;
+    --font-logo: mixta-pro, serif;
+    --font-text: new-order, sans-serif;
+    
+}
 * {
     padding: 0%;
     margin: 0%;
+}
+
+body{
+    background-color: var(--color-neutral);
+}
+
+.logo{
+    padding: 60px;
+}
+
+.logo > h1{
+    font-family: var(--font-logo);
+    color: #D35A2A;
+    line-height: 55px;
+    font-size: 70px;
+}
+
+.logo > p{
+    font-family: var(--font-text);
 }
