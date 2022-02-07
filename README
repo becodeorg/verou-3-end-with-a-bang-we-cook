@@ -4,3 +4,18 @@ On the website you can easily select recipes or get the website to randomly sele
 This way you can plan your meals ahead of time.
 The selected recipes will generate a shopping list for the user
 While the user is out grocery shopping they can conveniently access the shopping list from their phone.
+
+- HOME PAGE
+  	 - Nav bar:
+     - Buttons:
+           - all recipes
+           - week planning
+           - shopping list
+           - favorite recipes page (if we have time left for this)
+
+   - Introduction of concept
+   - Instruction of our website
+   - footer:
+            - copyright
+            - navigation navbar
+            - icons social media
