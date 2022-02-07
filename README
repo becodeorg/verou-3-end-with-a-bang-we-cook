@@ -7,15 +7,32 @@ While the user is out grocery shopping they can conveniently access the shopping
 
 - HOME PAGE
   	 - Nav bar:
-     - Buttons:
-           - all recipes
-           - week planning
-           - shopping list
-           - favorite recipes page (if we have time left for this)
+        - Buttons:
+             - all recipes
+             - week planning
+             - shopping list
+             - favorite recipes page (if we have time left for this)
 
    - Introduction of concept
    - Instruction of our website
    - footer:
             - copyright
-            - navigation navbar
+            - navigation buttons (nav bar)
+            - icons social media
+
+- ALL RECIPES PAGE
+       - Nav bar:
+            - Buttons:
+                - all recipes
+                - week planning
+                - shopping list
+                - favorite recipes page (if we have time left for this)
+       - Search bar:
+            - ingredients in your fridge
+            - diet
+            - favorite ingredient
+            - type (pasta, desserts, vegan, ...)
+       - Footer:
+            - copyright
+            - navigation buttons (nav bar)
             - icons social media
