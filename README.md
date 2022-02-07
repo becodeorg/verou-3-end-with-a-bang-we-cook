@@ -1,4 +1,4 @@
-We Cook
+# We Cook
 With ‘We Cook’ we’re looking to find a simple solution for busy people when choosing recipes.
 On the website you can easily select recipes or get the website to randomly select for you.
 This way you can plan your meals ahead of time.
