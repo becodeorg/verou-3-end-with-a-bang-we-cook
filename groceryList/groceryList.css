@@ -1,9 +1,30 @@
+:root{
+    --color-dark: #2E1A1E;
+    --color-highlight: #D35A2A;
+    --color-neutral: #EBEBEB;
+    --font-logo: mixta-pro, serif;
+    --font-text: new-order, sans-serif;
+
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /*Font Settings*/    
+    /*Font Settings*/   
 }
 
-/* Background-colors */
+body{
+    background-color: let(--color-neutral);
+}
+main{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.groceryListBody{
+    width: 200px;
+    height: 200px;
+    border: 2px solid red;
+}
 /* border options */
