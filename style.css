@@ -30,3 +30,8 @@ body{
 .logo > p{
     font-family: var(--font-text);
 }
+
+.card {
+    height: 350px;
+    width: 250px;
+}
