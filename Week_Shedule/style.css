@@ -1,3 +1,6 @@
+body{
+  text-align: center;
+}
 .ui-sortable-handle{
     background-color:rgba(255,255,255,0.5);
   }
@@ -5,17 +8,4 @@
   div{
     padding: 6px;
     border: 1px solid gray;
-  }
-  
-  #image-list1{
-    background-color: #DDF
-  }
-  #image-list2{
-    background-color: #FDD
-  }
-  #image-list3{
-    background-color: #DFD
-  }
-  #image-list4{
-    background-color: #FFD
   }
