@@ -15,7 +15,6 @@ let day = () => {
     }
 }
 
-
 // fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
 //   .then(response => response.json())
 //   .then(data => console.log(data));
@@ -46,18 +45,21 @@ const groceryList = () => {
     // Link to HTML
     const main = document.querySelector("main");
 
-    // create groceryListBody
+    // create groceryList Body
     const groceryListBody = createDivElement();
     groceryListBody.className = ("groceryListBody");
     main.appendChild(groceryListBody);
 
-    // create groceryListTitle
+    // create groceryList Title
     const groceryListTitle = createH1Element();
     groceryListTitle.innerHTML = ("Grocery List");
     groceryListBody.appendChild(groceryListTitle);
 
-    const ingredientsHolder = createDivElement();
-    ingredientsHolder.className = ("ingredientHolder");
+    // create date Holder
+    const date = createDivElement();
+    date.className = ("date");
+    date.innerText = ("get date of js");
+    groceryListBody.appendChild(date);
 }
 groceryList();
 console.log(main);
