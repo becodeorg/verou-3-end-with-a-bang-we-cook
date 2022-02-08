@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //Ellen Seghers
 const create28Cards=()=>{
     for (i=0;i<28;i++){
@@ -34,3 +35,6 @@ const create1Card=()=>{
     //TODO: Add classnames to the div tags
     div1.className = "card";
 }
+=======
+
+>>>>>>> 1343556c6ad3617dae3b3c51b42da5b90e4a7b12
