@@ -1,13 +1,5 @@
-<<<<<<< HEAD
 //Ellen Seghers
-const create28Cards=()=>{
-    for (i=0;i<28;i++){
 
-        create1Card();
-    }
-
-}
-const create1Card=()=>{
 //TODO: Create cards
     //Create elements you need for the cards
     const div1 = document.createElement("div");
@@ -34,7 +26,3 @@ const create1Card=()=>{
 
     //TODO: Add classnames to the div tags
     div1.className = "card";
-}
-=======
-
->>>>>>> 1343556c6ad3617dae3b3c51b42da5b90e4a7b12
