@@ -5,7 +5,6 @@ const create28Cards = () => {
         create1Card();
     }
 }
-create28Cards();
 
 //Create card
 const create1Card = () => {
@@ -20,7 +19,7 @@ const create1Card = () => {
 
     //Assign the type of button to the html
     button1.innerHTML = "Add to week planning";
-    button2.innerHTML = "Go to website";
+    button2.innerHTML = "preparation method";
 
     //Add the elements to the html
     document.body.append(div1);
@@ -34,10 +33,17 @@ const create1Card = () => {
     //Add classnames to the div tags
     div1.className = "card";
     div3.className = "buttons";
+
+    //Add click listener
+    clickListener(div1);
 }
 
-const clickListener = () => {
-    if (div1.addEventListener("click", create1Card()));
-    console.log(addEventListener());
+const clickListener = (div1) => {
+    div1.addEventListener("click", addBorder);
 }
 
+const addBorder = (event) => {
+    console.log(event.target);
+}
+
+create28Cards();
