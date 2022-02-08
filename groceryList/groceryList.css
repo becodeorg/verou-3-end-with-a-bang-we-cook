@@ -13,7 +13,9 @@
     box-sizing: border-box;
     /*Font Settings*/   
 }
-
+.border, .date, .groceryListBody{
+    border: 2px solid red;
+}
 body{
     background-color: let(--color-neutral);
 }
@@ -25,7 +27,8 @@ main{
 .groceryListBody{
     width: 200px;
     height: 200px;
-    border: 2px solid red;
 }
-
+.date{
+ /* need styling */
+}
 /* border options */
