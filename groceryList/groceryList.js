@@ -16,11 +16,11 @@ let day = () => {
 }
 
 fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
-  .then(response => response.json())
-  .then(data => {
-      console.log(data);
-      groceryList(data);
-  });
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        groceryList(data);
+    });
 
 //  What should i do for the groceryList
 
@@ -43,6 +43,16 @@ const createH1Element = () => {
     return newH1;
 }
 
+const createUlElement = () => {
+    const newUl = document.createElement("ul")
+    return newUl;
+}
+
+const createLiElement = () => {
+    const newLi = document.createElement("li");
+    return newLi;
+}
+
 const groceryList = (data) => {
     // Link to HTML
     const main = document.querySelector("main");
@@ -62,21 +72,21 @@ const groceryList = (data) => {
     date.className = ("date");
     date.innerText = ("get date of js");
     groceryListBody.appendChild(date);
-
-    // create ingredientsHolder
-    const ingredientsHolder = createDivElement();
-    ingredientsHolder.className = ("ingredientsHolder");
-    ingredientsHolder.innerText = ("holder for ingredients");
-    groceryListBody.appendChild(ingredientsHolder);
-
-    // create ingredientsParagraph
-   
+    
+    // create a loop for ingredients
     for (i = 0; i < 7; i++) {
-        const ingredientsParagraph = createParagraphElement();
-        ingredientsParagraph.innerText = data.hits[i].recipe.ingredients[i].text;
-        ingredientsHolder.appendChild(ingredientsParagraph);  
+
+        // create ingredientsHolder
+        const ingredientsHolder = createUlElement();
+        ingredientsHolder.className = ("ingredientsHolder");
+        groceryListBody.appendChild(ingredientsHolder);
+
+        // create ingredientsParagraph
+        const ingredientsParagraph = createLiElement();
+        ingredientsParagraph.innerText = data.hits[0].recipe.ingredientLines[i];
+        ingredientsHolder.appendChild(ingredientsParagraph);
     }
-    //console.log(data.hits[i].recipe.ingredients[i].text);
+    //console.log(data.hits[i].recipe.ingredients[i].text); // some DATA index
 }
 
 // TODO create nodes for api data

@@ -22,21 +22,24 @@ body{
 main{
     display: flex;
     justify-content: center;
-    text-align: center;
 }
 .groceryListBody{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 300px;
-    height: 500px;
+    width: 98%;
+    height: auto;
+}
+
+h1{
+    text-align: center;
 }
 .date{
- /* need styling */
+ text-align: center;
 }
 .ingredientsHolder{
-    margin-left: 0.5rem;
-    width: 280px;
-    height: 430px;
+    width: 100%;
+    height: auto;
 }
 /* border options */
+
