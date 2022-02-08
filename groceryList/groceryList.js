@@ -15,10 +15,12 @@ let day = () => {
     }
 }
 
-// fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
-//   .then(response => response.json())
-//   .then(data => console.log(data));
-
+fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
+  .then(response => response.json())
+  .then(data => {
+      console.log(data);
+      groceryList(data);
+  });
 
 //  What should i do for the groceryList
 
@@ -41,7 +43,7 @@ const createH1Element = () => {
     return newH1;
 }
 
-const groceryList = () => {
+const groceryList = (data) => {
     // Link to HTML
     const main = document.querySelector("main");
 
@@ -61,10 +63,22 @@ const groceryList = () => {
     date.innerText = ("get date of js");
     groceryListBody.appendChild(date);
 
-    // create
+    // create ingredientsHolder
+    const ingredientsHolder = createDivElement();
+    ingredientsHolder.className = ("ingredientsHolder");
+    ingredientsHolder.innerText = ("holder for ingredients");
+    groceryListBody.appendChild(ingredientsHolder);
+
+    // create ingredientsParagraph
+   
+    for (i = 0; i < 7; i++) {
+        const ingredientsParagraph = createParagraphElement();
+        ingredientsParagraph.innerText = data.hits[i].recipe.ingredients[i].text;
+        ingredientsHolder.appendChild(ingredientsParagraph);  
+    }
+    //console.log(data.hits[i].recipe.ingredients[i].text);
 }
-groceryList();
-console.log(main);
+
 // TODO create nodes for api data
 // TODO create check box ? 
 // TODO ingredients quantity's
