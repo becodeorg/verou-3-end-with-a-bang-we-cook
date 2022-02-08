@@ -73,25 +73,26 @@ const groceryList = (data) => {
     groceryListBody.appendChild(date);
 
     // create a loop for recipe
-    for (i = 0; i < 7; i++) {
+    for (let i = 0; i < data.hits.length; i++) {
         // create ingredientsHolder
         const ingredientsHolder = createUlElement();
         ingredientsHolder.className = ("ingredientsHolder");
         groceryListBody.appendChild(ingredientsHolder);
 
-        // create recipeNameParagraph
-        let recipeNameParagraph = createLiElement();
-        recipeNameParagraph.innerHTML = data.hits[i].recipe.label; // recipe Name
-        ingredientsHolder.appendChild(recipeNameParagraph);
-        console.log(recipeNameParagraph); // log check
-        
-        //create ingredientsParagraph
-        let ingredientsParagraph = createLiElement();
-        ingredientsParagraph.innerHTML = data.hits[i].recipe.ingredients[i].food; // ingredients
-        recipeNameParagraph.appendChild(ingredientsParagraph);
-        console.log(ingredientsParagraph); // log check
+       //create ingredientsParagraph
+       let ingredientsParagraph = createLiElement();
+       ingredientsParagraph.innerHTML = data.hits[0].recipe.ingredients[i].food; // ingredients
+       ingredientsHolder.appendChild(ingredientsParagraph);
+      // console.log(data.hits[0].recipe.ingredients[i].food); // log check
     }
+
 }
+
+//  // create recipeNameParagraph
+//  let recipeNameParagraph = createLiElement();
+//  recipeNameParagraph.innerHTML = data.hits[i].recipe.label; // recipe Name
+//  ingredientsHolder.appendChild(recipeNameParagraph);
+//  console.log(recipeNameParagraph); // log check
 
 // TODO create nodes for api data
 // TODO create check box ? 
