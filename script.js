@@ -1,5 +1,12 @@
 //Ellen Seghers
+const create28Cards=()=>{
+    for (i=0;i<28;i++){
 
+        create1Card();
+    }
+
+}
+const create1Card=()=>{
 //TODO: Create cards
     //Create elements you need for the cards
     const div1 = document.createElement("div");
@@ -26,3 +33,4 @@
 
     //TODO: Add classnames to the div tags
     div1.className = "card";
+}
