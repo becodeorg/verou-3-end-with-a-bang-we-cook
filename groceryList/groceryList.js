@@ -15,7 +15,6 @@ let day = () => {
     }
 }
 
-
 // fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
 //   .then(response => response.json())
 //   .then(data => console.log(data));
@@ -45,28 +44,22 @@ const createH1Element = () => {
 const groceryList = () => {
     // Link to HTML
     const main = document.querySelector("main");
-    // create
+
+    // create groceryList Body
     const groceryListBody = createDivElement();
     groceryListBody.className = ("groceryListBody");
     main.appendChild(groceryListBody);
 
+    // create groceryList Title
     const groceryListTitle = createH1Element();
     groceryListTitle.innerHTML = ("Grocery List");
     groceryListBody.appendChild(groceryListTitle);
 
-    const infoCard = createDivElement();
-
-    section.appendChild(infoCard);
-    const locationH1 = createH1Element();
-    locationH1.innerText = data.city.name;
-    infoCard.appendChild(locationH1);
-    const city = createParagraphElement();
-    city.innerText = data.city.country;
-    infoCard.appendChild(city);
-    const cityImage = createDivElement();
-    cityImage.className = "cityImage";
-    cityImage.innerHTML = `<img src=${image.results[0].urls.regular} alt="City of" style="width:200px;height:200px">`;
-    infoCard.appendChild(cityImage);
+    // create date Holder
+    const date = createDivElement();
+    date.className = ("date");
+    date.innerText = ("get date of js");
+    groceryListBody.appendChild(date);
 }
 groceryList();
 console.log(main);
