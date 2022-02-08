@@ -60,6 +60,8 @@ const groceryList = () => {
     date.className = ("date");
     date.innerText = ("get date of js");
     groceryListBody.appendChild(date);
+
+    // create
 }
 groceryList();
 console.log(main);
