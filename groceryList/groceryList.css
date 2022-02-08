@@ -1,4 +1,4 @@
-:root{
+:root {
     --color-dark: #2E1A1E;
     --color-highlight: #D35A2A;
     --color-neutral: #EBEBEB;
@@ -7,23 +7,29 @@
 
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /*Font Settings*/   
 }
-.border, .date, .groceryListBody, .ingredientsHolder{
+
+.border,
+.date,
+.groceryListBody,
+.ingredientsHolder {
     border: 2px solid red;
 }
-body{
+
+body {
     background-color: let(--color-neutral);
 }
-main{
+
+main {
     display: flex;
     justify-content: center;
 }
-.groceryListBody{
+
+.groceryListBody {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,15 +37,20 @@ main{
     height: auto;
 }
 
-h1{
+h1 {
     text-align: center;
 }
-.date{
- text-align: center;
+
+.date {
+    text-align: center;
 }
-.ingredientsHolder{
+
+.ingredientsHolder {
     width: 100%;
     height: auto;
 }
-/* border options */
 
+ul {
+    list-style-position: inside;
+    /* Add the bullets inside the div*/
+}

@@ -27,7 +27,6 @@ fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4
 // TODO events on Card in random Card Pick 
 // TODO Look in Variables for links
 // TODO Check out ingredients measure options
-// TODO create groceryList Holder
 const createDivElement = () => {
     const newDiv = document.createElement("div");
     return newDiv;
@@ -72,21 +71,26 @@ const groceryList = (data) => {
     date.className = ("date");
     date.innerText = ("get date of js");
     groceryListBody.appendChild(date);
-    
-    // create a loop for ingredients
-    for (i = 0; i < 7; i++) {
 
+    // create a loop for recipe
+    for (i = 0; i < 7; i++) {
         // create ingredientsHolder
         const ingredientsHolder = createUlElement();
         ingredientsHolder.className = ("ingredientsHolder");
         groceryListBody.appendChild(ingredientsHolder);
 
-        // create ingredientsParagraph
-        const ingredientsParagraph = createLiElement();
-        ingredientsParagraph.innerText = data.hits[0].recipe.ingredientLines[i];
-        ingredientsHolder.appendChild(ingredientsParagraph);
+        // create recipeNameParagraph
+        let recipeNameParagraph = createLiElement();
+        recipeNameParagraph.innerHTML = data.hits[i].recipe.label; // recipe Name
+        ingredientsHolder.appendChild(recipeNameParagraph);
+        console.log(recipeNameParagraph); // log check
+        
+        //create ingredientsParagraph
+        let ingredientsParagraph = createLiElement();
+        ingredientsParagraph.innerHTML = data.hits[i].recipe.ingredients[i].food; // ingredients
+        recipeNameParagraph.appendChild(ingredientsParagraph);
+        console.log(ingredientsParagraph); // log check
     }
-    //console.log(data.hits[i].recipe.ingredients[i].text); // some DATA index
 }
 
 // TODO create nodes for api data
