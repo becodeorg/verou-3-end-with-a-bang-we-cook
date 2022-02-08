@@ -1,13 +1,13 @@
-$('.sortable-list').sortable({ 
-    connectWith: '.sortable-list',
-    update: function(event, ui) {
-      var changedList = this.id;
-      var order = $(this).sortable('toArray');
-      var positions = order.join(';');
-  
-      console.log({
-        id: changedList,
-        positions: positions
-      });
-    }
-  });
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
