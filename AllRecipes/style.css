@@ -1,0 +1,16 @@
+* {
+    margin: 0%;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.card {
+    height: 350px;
+    width: 250px;
+}
