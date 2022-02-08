@@ -9,46 +9,28 @@
 * {
     padding: 0%;
     margin: 0%;
-    text-decoration: none;
 }
 
 body{
     background-color: var(--color-neutral);
-    min-width: 100vw;
 }
 
-nav{ 
-    padding: 40px 50px;
-    display: flex;
-    justify-content: space-between;
+.logo{
+    padding: 60px;
 }
-
 
 .logo > h1{
     font-family: var(--font-logo);
     color: #D35A2A;
-    line-height: 40px;
-    font-size: 50px;
+    line-height: 55px;
+    font-size: 70px;
 }
 
 .logo > p{
-    padding-left: 5px;
     font-family: var(--font-text);
 }
 
-.nav-items{
-    align-self: center;
-}
-
-.nav-items > a {
-    padding: 20px;
-    color: var(--color-dark);
-}
-.nav-items > a:hover{
-    color: var(--color-highlight);
-}
-
-button{
-    margin: auto;
-    
+.card {
+    height: 350px;
+    width: 250px;
 }
