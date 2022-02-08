@@ -1,13 +1,22 @@
-function allowDrop(ev) {
-  ev.preventDefault();
+function handleDragStart(e) {
+  this.style.opacity = '0.4';
 }
 
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
+function handleDragEnd(e) {
+  this.style.opacity = '1';
 }
 
-function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
+function handleDragOver(e) {
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
+
+  return false;
 }
+
+let items = document.querySelectorAll('.week .day');
+items.forEach(function (item) {
+  item.addEventListener('dragstart', handleDragStart);
+  item.addEventListener('dragend', handleDragEnd);
+
+});
