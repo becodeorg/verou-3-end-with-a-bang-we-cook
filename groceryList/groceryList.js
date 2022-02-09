@@ -1,19 +1,19 @@
-let day = () => {
-    let day = new Date();
-    let week = new Array(
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-    );
-    // TODO Get more date info for groceryList 
-    for (i = 0; i < 7; i++) {
-        console.log(week[(day.getDay() + 1 + i) % 7]);
-    }
-}
+// let day = () => {
+//     let day = new Date();
+//     let week = new Array(
+//         "Sunday",
+//         "Monday",
+//         "Tuesday",
+//         "Wednesday",
+//         "Thursday",
+//         "Friday",
+//         "Saturday"
+//     );
+//     // TODO Get more date info for groceryList 
+//     for (i = 0; i < 7; i++) {
+//         console.log(week[(day.getDay() + 1 + i) % 7]);
+//     }
+// }
 
 fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
     .then(response => response.json())
@@ -52,6 +52,12 @@ const createLiElement = () => {
     return newLi;
 }
 
+const checkBoxElement = () => {
+    let checkBox = document.createElement("INPUT");
+    checkBox.setAttribute("type", "checkbox");
+    return checkBox;
+  }
+
 const groceryList = (data) => {
     // Link to HTML
     const main = document.querySelector("main");
@@ -72,20 +78,26 @@ const groceryList = (data) => {
     date.innerText = ("get date of js");
     groceryListBody.appendChild(date);
 
-    // create a loop for recipe
-    for (let i = 0; i < data.hits.length; i++) {
+    // create a loop for ingredients
+    for (let i = 0; i < data.hits[0].recipe.ingredients.length; i++) {
+
         // create ingredientsHolder
         const ingredientsHolder = createUlElement();
         ingredientsHolder.className = ("ingredientsHolder");
         groceryListBody.appendChild(ingredientsHolder);
 
-       //create ingredientsParagraph
-       let ingredientsParagraph = createLiElement();
-       ingredientsParagraph.innerHTML = data.hits[0].recipe.ingredients[i].food; // ingredients
-       ingredientsHolder.appendChild(ingredientsParagraph);
-      // console.log(data.hits[0].recipe.ingredients[i].food); // log check
-    }
+        // create checkBox
+        const checkBox = checkBoxElement();
+        ingredientsHolder.appendChild(checkBox);
+    
+        //create ingredientsParagraph
+        let ingredientsParagraph = createLiElement();
+        ingredientsParagraph.innerHTML = data.hits[0].recipe.ingredients[i].food;
+        ingredientsHolder.append("ingredientsParagraph");
 
+        console.log(ingredientsParagraph); // log check
+    }
+    
 }
 
 //  // create recipeNameParagraph
