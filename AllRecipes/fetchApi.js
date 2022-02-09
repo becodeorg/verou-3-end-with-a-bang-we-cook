@@ -18,7 +18,8 @@ const addDataToCards=(data)=>{
    
    for(let i=0;i<20;i++)
     { document.getElementsByClassName("image")[i].children[0].src=data.hits[i].recipe.image;
-        //document.getElementById("card").setAttribute(data.hits[i].recipe.image);
+      document.getElementsByClassName("title")[i].children[0].innerText=data.hits[i].recipe.label;      
+    //document.getElementById("card").setAttribute(data.hits[i].recipe.image);
     }
 }
 
