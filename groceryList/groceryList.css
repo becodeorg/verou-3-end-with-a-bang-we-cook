@@ -50,7 +50,7 @@ h1 {
     height: auto;
 }
 
-ul {
-    list-style-position: inside;
-    /* Add the bullets inside the div*/
+ul{
+    display: flex;
+    list-style-type: none;
 }
