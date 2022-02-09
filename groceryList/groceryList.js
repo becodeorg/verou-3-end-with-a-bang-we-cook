@@ -12,15 +12,14 @@ const addEveryWeekDay = () => {
         let day = new Date().getDay();
         everyDay.push(weekDay[(day + i) % 7]);
     }
-    console.log(everyDay);
     return everyDay;
-    
 }
 addEveryWeekDay();
 fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
     .then(response => response.json())
     .then(data => {
         console.log(data);
+        console.log(data.hits[0].recipe.ingredients[0].quantity);
         groceryListLoop(data);
     });
 
@@ -40,7 +39,7 @@ const createParagraphElement = () => {
 }
 
 const createH1Element = () => {
-    const newH1 = document.createElement("h1");
+    const newH1 = document.createElement("h3");
     return newH1;
 }
 
@@ -66,7 +65,6 @@ const main = document.querySelector("main");
 
 let groceryListLoop = (data) => {
     for (let l = 0; l < 7; l++) {
-        console.log(addEveryWeekDay());
         // create groceryList Body
         const groceryListBody = createDivElement();
         groceryListBody.className = ("groceryListBody");
@@ -82,15 +80,14 @@ let groceryListLoop = (data) => {
         date.className = ("date");
         date.innerText = addEveryWeekDay()[l];
         groceryListBody.appendChild(date);
-        ingredientsLoop(groceryListBody,data);
+        ingredientsLoop(groceryListBody, data);
     }
 }
 
 
 // ingredients element LOOP
-let ingredientsLoop = (groceryListBody,data) => {
+let ingredientsLoop = (groceryListBody, data) => {
     // create a loop for ingredients
-    console.log(data.hits[0].recipe.ingredients);
     for (let i = 0; i < data.hits[0].recipe.ingredients.length; i++) {
 
         // create ingredientsHolder
@@ -106,10 +103,8 @@ let ingredientsLoop = (groceryListBody,data) => {
         let ingredientsParagraph = createLiElement();
         ingredientsParagraph.innerHTML = data.hits[0].recipe.ingredients[i].food;
         ingredientsHolder.appendChild(ingredientsParagraph);
-
-        console.log(ingredientsParagraph); // log check
     }
-    
+
 }
 
 
