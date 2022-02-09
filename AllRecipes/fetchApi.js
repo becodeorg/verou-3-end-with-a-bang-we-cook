@@ -15,8 +15,11 @@ const addSelectedToarray=()=>{
 }
 
 const addDataToCards=(data)=>{
-    document.getElementsByTagName("img")[0].src=data.hits[0].recipe.image;
-    document.getElementById("card").setAttribute(data.hits[0].recipe);
+   
+   for(let i=0;i<20;i++)
+    { document.getElementsByClassName("image")[i].children[0].src=data.hits[i].recipe.image;
+        //document.getElementById("card").setAttribute(data.hits[i].recipe.image);
+    }
 }
 
 /*const Search=()=>{
