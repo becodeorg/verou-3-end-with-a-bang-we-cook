@@ -1,3 +1,15 @@
+:root{
+    --color-dark: #2E1A1E;
+    --color-highlight: #D35A2A;
+    --color-neutral: #EBEBEB;
+    --color-light: #FCFCFC;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 hr{
     max-width: 70%;
     margin: auto;
@@ -11,6 +23,26 @@ hr{
     margin: 30px auto;
 
 }
+
+/* button styling */
+/*              */
+button{
+    margin: auto;
+    display: flex;
+    border: 1px solid var(--color-dark);
+	border-radius: 3rem;
+	overflow: hidden;
+	background-color: var(--color-light);
+    padding: 10px 20px;
+}
+
+button:hover{
+    color: var(--color-highlight);
+    border: 1px solid var(--color-highlight);
+    
+}
+
+
 
 @media only screen and (max-width: 749px){
     img {
