@@ -5,7 +5,8 @@ const buttons = document.querySelectorAll(".plusImage");
 
 const changeButtonImage = (index) => {
     const selectedElement = buttons[index]
-    if(selectedElement.src === "plusmark.png"){
+    console.log(selectedElement.src);
+    if(selectedElement.src.includes("plusmark.png")){
         selectedElement.classList.add("selected");
         selectedElement.src = "checkmark.png";
     }
