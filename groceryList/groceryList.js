@@ -108,7 +108,7 @@ const groceryList = (data) => {
 
     }
     ingredientsLoop();
-    console.log(ingredientsLoop());
+    console.log(ingredientsLoop(data));
 
 }
 
