@@ -1,21 +1,22 @@
-// let day = () => {
-//     let day = new Date();
-//     let week = new Array(
-//         "Sunday",
-//         "Monday",
-//         "Tuesday",
-//         "Wednesday",
-//         "Thursday",
-//         "Friday",
-//         "Saturday"
-//     );
-//     // TODO Get more date info for groceryList 
-//     for (i = 0; i < 7; i++) {
-//         console.log(week[(day.getDay() + i) % 7]);
-//     }
-// }
-// day();
-
+const addEveryWeekDay = () => {
+    const weekDay = ["Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
+    let everyDay = [];
+    for (let i = 0; i < 7; i++) {
+        let day = new Date().getDay();
+        everyDay.push(weekDay[(day + i) % 7]);
+    }
+    console.log(everyDay);
+    return everyDay;
+    
+}
+addEveryWeekDay();
 fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
     .then(response => response.json())
     .then(data => {
@@ -64,22 +65,22 @@ const checkBoxElement = () => {
 const main = document.querySelector("main");
 
 let groceryListLoop = (data) => {
-    for (let l = 0; l < 2; l++) {
+    for (let l = 0; l < 7; l++) {
+        console.log(addEveryWeekDay());
         // create groceryList Body
         const groceryListBody = createDivElement();
         groceryListBody.className = ("groceryListBody");
-        groceryListBody.id = (l);
         main.appendChild(groceryListBody);
 
         // create groceryList Title
         const groceryListTitle = createH1Element();
-        groceryListTitle.innerHTML = ("Grocery List");
+        groceryListTitle.innerHTML = ("Shopping List");
         groceryListBody.appendChild(groceryListTitle);
 
         // create date Holder
         const date = createDivElement();
         date.className = ("date");
-        date.innerText = ("get date of js");
+        date.innerText = addEveryWeekDay()[l];
         groceryListBody.appendChild(date);
         ingredientsLoop(groceryListBody,data);
     }
