@@ -2,10 +2,10 @@ fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        addData(data);
-    });
+        addDataToCards(data);
+});
 
-const addData=(data)=>{
+const addDataToCards=(data)=>{
     document.getElementsByTagName("img")[0].src=data.hits[0].recipe.image;
 }
 

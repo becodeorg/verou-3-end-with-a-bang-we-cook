@@ -1,16 +1,33 @@
+:root{
+  --color-dark: #2E1A1E;
+  --color-highlight: #D35A2A;
+  --color-neutral: #EBEBEB;
+  --font-logo: mixta-pro, serif;
+  --font-text: new-order, sans-serif;
+  
+}
+
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: var(--font-text);
+}
+
 body{
   text-align: center;
+  background-color: var(--color-neutral);
+  color: var(--color-dark);
 }
 
 .day{
-    border: 3px solid #666;
+    border: 3px solid var(--color-dark);
     background-color: #ddd;
     border-radius: .5em;
     padding: 10px;
     cursor: pointer;
 }
 .weekDay{
-  border: 3px solid #666;
+  border: 3px solid var(--color-dark);
   background-color: #ddd;
   border-radius: .5em;
   padding: 10px;
