@@ -2,6 +2,13 @@
     margin: 0%;
 }
 
+root {
+    --color-dark: #2E1A1E;
+    --color-highlight: #D35A2A;
+    --color-neutral: #EBEBEB;
+    --color-light: #FCFCFC;
+}
+
 html {
     height: 100%;
 }
@@ -10,9 +17,28 @@ body {
     height: 100%;
 }
 
+.container {
+    margin-left: 8px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+}
+
 .card {
     height: 350px;
     width: 250px;
+    margin-bottom: 15px;
+    border-style: solid;
     border-radius: 5px;
-    border-color: #2E1A1E;
+    border-color: #D35A2A;
+}
+
+.cardImage {
+    height: 250px;
+    max-width: 250px;
+}
+
+.plusImage {
+    height: 40px;
+
 }
