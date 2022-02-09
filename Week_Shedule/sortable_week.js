@@ -51,3 +51,27 @@ items.forEach(function (item) {
 });
 
 });
+
+
+//weekshedule
+const createDayElements=()=>{
+  const days=document.getElementById("weekDays");
+  const d = new Date();
+  let day = d.getDay();
+  console.log(day);
+  for(let i=0;i<7;i++){
+    const newDiv=document.createElement("div");
+    newDiv.className="weekDay";
+    newDiv.innerText=newDay(day);
+    if(day==6){
+      day=0;
+    }else {day=day+1;}
+    days.appendChild(newDiv);
+  }
+}
+const newDay=(currentDay)=>{
+  let weekDays=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  return weekDays[currentDay];
+}
+
+createDayElements();

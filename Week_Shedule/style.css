@@ -9,8 +9,14 @@ body{
     padding: 10px;
     cursor: pointer;
 }
+.weekDay{
+  border: 3px solid #666;
+  background-color: #ddd;
+  border-radius: .5em;
+  padding: 10px;
+}
 
-#week{
+.week{
   display: grid;
   grid-template-columns:repeat(7, 1fr);
   gap: 10px;
