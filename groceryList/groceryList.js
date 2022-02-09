@@ -38,9 +38,9 @@ const createParagraphElement = () => {
     return newParagraph;
 }
 
-const createH1Element = () => {
-    const newH1 = document.createElement("h3");
-    return newH1;
+const createH3Element = () => {
+    const newH3 = document.createElement("h3");
+    return newH3;
 }
 
 const createUlElement = () => {
@@ -71,7 +71,7 @@ let groceryListLoop = (data) => {
         main.appendChild(groceryListBody);
 
         // create groceryList Title
-        const groceryListTitle = createH1Element();
+        const groceryListTitle = createH3Element();
         groceryListTitle.innerHTML = ("Shopping List");
         groceryListBody.appendChild(groceryListTitle);
 
@@ -88,7 +88,7 @@ let groceryListLoop = (data) => {
 // ingredients element LOOP
 let ingredientsLoop = (groceryListBody, data) => {
     // create a loop for ingredients
-    for (let i = 0; i < data.hits[0].recipe.ingredients.length; i++) {
+    for (let i = 0; i < data.hits[10].recipe.ingredients.length; i++) {
 
         // create ingredientsHolder
         const ingredientsHolder = createUlElement();
@@ -101,7 +101,7 @@ let ingredientsLoop = (groceryListBody, data) => {
 
         //create ingredientsParagraph
         let ingredientsParagraph = createLiElement();
-        ingredientsParagraph.innerHTML = data.hits[0].recipe.ingredients[i].food;
+        ingredientsParagraph.innerHTML = data.hits[10].recipe.ingredients[i].food;
         ingredientsHolder.appendChild(ingredientsParagraph);
     }
 

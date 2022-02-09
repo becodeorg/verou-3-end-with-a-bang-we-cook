@@ -1,56 +1,90 @@
-:root {
-    --color-dark: #2E1A1E;
-    --color-highlight: #D35A2A;
-    --color-neutral: #EBEBEB;
-    --font-logo: mixta-pro, serif;
-    --font-text: new-order, sans-serif;
+ :root {
+     --color-dark: #2E1A1E;
+     --color-highlight: #D35A2A;
+     --color-neutral: #EBEBEB;
+     --font-logo: mixta-pro, serif;
+     --font-text: new-order, sans-serif;
+ }
 
-}
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+ .border,
+ .date,
+ .groceryListBody {
+     border: 2px solid black;
+ }
 
-.border,
-.date,
-.groceryListBody
- {
-    border: 2px solid red;
-}
+ body {
+     background-color: let(--color-neutral);
+ }
 
-body {
-    background-color: let(--color-neutral);
-}
+ main {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+ }
 
-main {
-    display: flex;
-    justify-content: center;
-}
+ .groceryListBody {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     width: 98%;
+     height: auto;
+     margin-left: 0.2rem;
+     margin-bottom: 0.5rem;
+ }
 
-.groceryListBody {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 98%;
-    height: auto;
-}
+ h3 {
+     text-align: center;
+ }
 
-h1 {
-    text-align: center;
-}
+ .date {
+     text-align: center;
+ }
 
-.date {
-    text-align: center;
-}
+ .ingredientsHolder {
+     width: 100%;
+     height: auto;
+ }
 
-.ingredientsHolder {
-    width: 100%;
-    height: auto;
-}
+ ul {
+     display: flex;
+     margin: 0.5rem;
+     list-style-type: none;
+ }
 
-ul{
-    display: flex;
-    list-style-type: none;
-}
+ @media only screen and (min-with: 426px) and (max-with: 768px) {
+     main {
+         display: flex;
+         justify-content: center;
+     }
+
+     .groceryListBody {
+         display: flex;
+         justify-content: center;
+         width: 98%;
+         height: auto;
+     }
+
+     h1 {
+         text-align: center;
+     }
+
+     .date {
+         text-align: center;
+     }
+
+     .ingredientsHolder {
+         width: 70%;
+         height: auto;
+     }
+
+     ul {
+         display: flex;
+         list-style-type: none;
+     }
+ }
