@@ -75,3 +75,23 @@ const newDay=(currentDay)=>{
 }
 
 createDayElements();
+
+
+fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        addDataToCards(data);
+});
+//send all info to the groceries
+const addDataToCards=(data)=>{
+  document.getElementById("sendButton").addEventListener("click", sendData);
+}
+const sendData=()=>{
+  const week=document.getElementById("week");
+  let arrayData=[];
+  for (let i=0;i<7;i++){
+    arrayData[i]=week.children[i].innerHTML
+  }
+  return arrayData;
+}

@@ -1,0 +1,30 @@
+hr{
+    max-width: 70%;
+    margin: auto;
+}
+.step {
+    text-align: center;
+    padding: 20px;
+}
+
+.steps {
+    margin: 30px auto;
+
+}
+
+@media only screen and (max-width: 749px){
+    img {
+    max-width: 70%;
+}
+}
+
+@media only screen and (min-width: 750px){
+    .steps {
+        
+        max-width: 70%;
+        display: flex;
+    }
+    img {
+        max-width: 100%;
+    }
+}
