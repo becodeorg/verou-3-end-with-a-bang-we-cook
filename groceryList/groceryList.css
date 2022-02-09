@@ -13,7 +13,6 @@
  }
 
  .border,
- .date,
  .groceryListBody {
      border: 2px solid black;
  }
@@ -35,11 +34,20 @@
      width: 98%;
      height: auto;
      margin-left: 0.2rem;
-     margin-bottom: 0.5rem;
+     margin-bottom: 1rem;
  }
 
  h3 {
+     margin-top: 1rem;
      text-align: center;
+ }
+
+ .date{
+     margin: 1rem;
+ }
+
+ input{
+    margin-right: 0.7rem;
  }
 
  .date {
@@ -47,7 +55,7 @@
  }
 
  .ingredientsHolder {
-     width: 100%;
+     width: 97%;
      height: auto;
  }
 
@@ -55,6 +63,11 @@
      display: flex;
      margin: 0.5rem;
      list-style-type: none;
+ }
+
+ li{
+  
+    margin-left: 1rem;
  }
 
  @media only screen and (min-with: 426px) and (max-with: 768px) {

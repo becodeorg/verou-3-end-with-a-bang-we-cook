@@ -54,7 +54,7 @@ const createLiElement = () => {
 }
 
 const checkBoxElement = () => {
-    let checkBox = document.createElement("INPUT");
+    let checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
     return checkBox;
 }
@@ -81,6 +81,10 @@ let groceryListLoop = (data) => {
         date.innerText = addEveryWeekDay()[l];
         groceryListBody.appendChild(date);
         ingredientsLoop(groceryListBody, data);
+
+        const recipe = createParagraphElement();
+        recipe.innerHTML = (data.hits[0].recipe.label);
+        date.appendChild(recipe);
     }
 }
 
@@ -88,7 +92,7 @@ let groceryListLoop = (data) => {
 // ingredients element LOOP
 let ingredientsLoop = (groceryListBody, data) => {
     // create a loop for ingredients
-    for (let i = 0; i < data.hits[10].recipe.ingredients.length; i++) {
+    for (let i = 0; i < data.hits[0].recipe.ingredients.length; i++) {
 
         // create ingredientsHolder
         const ingredientsHolder = createUlElement();
@@ -99,10 +103,25 @@ let ingredientsLoop = (groceryListBody, data) => {
         const checkBox = checkBoxElement();
         ingredientsHolder.appendChild(checkBox);
 
+        let amount = createLiElement();
+        amount.innerHTML = "10";
+        ingredientsHolder.appendChild(amount);
+
+        let measure = createLiElement();
+        measure.innerHTML = "cups";
+        ingredientsHolder.appendChild(measure);
+
+        
+
         //create ingredientsParagraph
         let ingredientsParagraph = createLiElement();
-        ingredientsParagraph.innerHTML = data.hits[10].recipe.ingredients[i].food;
+        ingredientsParagraph.innerHTML = data.hits[0].recipe.ingredients[i].food;
         ingredientsHolder.appendChild(ingredientsParagraph);
+
+       
+
+    
+        
     }
 
 }
