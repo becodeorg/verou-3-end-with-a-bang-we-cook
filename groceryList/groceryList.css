@@ -43,7 +43,7 @@
  }
 
 
- #bigListBody{
+ .bigListBody{
      display: none;
      flex-direction: column;
      justify-content: center;

@@ -36,7 +36,7 @@ pageTitle.appendChild(listButton);
 
 
 listButton.addEventListener("click", function () {
-    const change = document.getElementById("bigListBody").style.display = "flex";
+    const change = document.getElementsByClassName("bigListBody").style.display = "flex";
 });
 
 
