@@ -44,7 +44,7 @@ function handleDrop(e) {
 let items = document.querySelectorAll('#week .day');
 
 items.forEach(function (item) {
-  console.log(item);
+  
   item.addEventListener('dragstart', handleDragStart);
   item.addEventListener('dragover', handleDragOver);
   item.addEventListener('dragend', handleDragEnd);
@@ -60,7 +60,7 @@ const createDayElements=()=>{
   const days=document.getElementById("weekDays");
   const d = new Date();
   let day = d.getDay();
-  console.log(day);
+  
   for(let i=0;i<7;i++){
     const newDiv=document.createElement("div");
     newDiv.className="weekDay";
@@ -82,12 +82,26 @@ createDayElements();
 fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
     .then(response => response.json())
     .then(data => {
-        console.log(data);
-        addDataToCards(data);
+        //console.log(data);
+        //addDataToCards(data);
 });
 //send all info to the groceries
-const addDataToCards=(data)=>{
+const addDataToCards=()=>{
+  readLocalData();
   
+}
+const readLocalData=()=>{ 
+  let values = []
+  let keys = Object.keys(localStorage)
+  let i = keys.length;
+
+    while ( i-- ) {
+        values.push( localStorage.getItem(keys[i]) );
+    }
+    console.log(values);
+
+    return values;
+
 }
 const sendData=()=>{
   const week=document.getElementById("week");
@@ -97,3 +111,4 @@ const sendData=()=>{
   }
   return arrayData;
 }
+addDataToCards();
