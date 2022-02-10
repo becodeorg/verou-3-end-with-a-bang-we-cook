@@ -25,13 +25,13 @@ const addDataToCards=(data)=>{
     }
 }
 
-const Search=()=>{
-  const form = document.getElementById("form")
-  if(form.value==""){
+export const Search=()=>{
+    const input = document.getElementById("searchBar").value;
+  if(input == ""){
     fetchRecipes('lunch');
   }else{
-    fetchRecipes(form.value.toLowerCase());
+    fetchRecipes(input.toLowerCase());
     }
 }
 
-fetchRecipes("british");
+Search();
