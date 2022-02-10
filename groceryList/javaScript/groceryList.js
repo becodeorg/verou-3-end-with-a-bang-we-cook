@@ -16,7 +16,7 @@ let groceryListLoop = (data) => {
 
         // create groceryList Title
         const groceryListTitle = createH3Element();
-        groceryListTitle.innerHTML = (data.hits[l].recipe.label);
+        groceryListTitle.innerHTML = (data.recipe.label);
         groceryListBody.appendChild(groceryListTitle);
 
         // create date Holder

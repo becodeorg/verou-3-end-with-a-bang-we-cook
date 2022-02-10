@@ -31,7 +31,7 @@ let bigList = (data) => {
     bigListTitle.innerHTML = ("Big Shopping List");
     bigListBody.appendChild(bigListTitle);
 
-    for (let i = 0; i < data.hits[0].recipe.ingredients.length; i++) {
+    for (let i = 0; i < data.recipe.ingredients.length; i++) {
 
         const bigListIngredientsHolder = createUlElement();
         bigListIngredientsHolder.className = ("bigListIngredientsHolder");
@@ -43,11 +43,11 @@ let bigList = (data) => {
         bigListIngredientsHolder.append(checkBox);
 
         let amount = createLiElement();
-        amount.innerHTML = data.hits[0].recipe.ingredients[i].quantity.toPrecision(2);
+        amount.innerHTML = data.recipe.ingredients[i].quantity.toPrecision(2);
         bigListIngredientsHolder.appendChild(amount);
 
         let measure = createLiElement();
-        measure.innerHTML = data.hits[0].recipe.ingredients[i].measure;
+        measure.innerHTML = data.recipe.ingredients[i].measure;
         bigListIngredientsHolder.appendChild(measure);
 
         //create ingredientsParagraph

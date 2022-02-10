@@ -1,14 +1,17 @@
 import bigList from "./javaScript/bigList.js"
 import groceryListLoop from "./javaScript/groceryList.js"
 
-fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
+let values=JSON.parse(localStorage.getItem("chosenRecipe"));
+for (let i = 0; i < values.length; i++){
+fetch(values[i])
     .then(response => response.json())
     .then(data => {
         console.log(data);
         bigList(data);
         groceryListLoop(data);
     });
-
+}
+   
 //  What should i do for the groceryList
 
 // TODO events on Card in random Card Pick 
