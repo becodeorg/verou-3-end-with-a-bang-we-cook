@@ -1,33 +1,44 @@
 fetch("http://testimonialapi.toolcarton.com/api")
 .then(response => response.json())
 .then(result => {
+   getfirst3(result)  
+})
 
-    for (let i = 0; i < 3; i++) {
-        const first3 = result[i]
-        createReview(first3)
+const getfirst3 = (result) => {
+    let allData = result
+     for (let i = 0; i < allData.length; i++) {
+        const people = allData[i];
+        compileData(people, i)
     }
 }
-)
-.catch(error => console.log('error', error))
 
-const createReview = (result, i) => {
-    const name = result.name;
-    console.log(name);
-    const location = result.location;
-    console.log(location);
-    const lorem = result.lorem;
-    console.log(lorem);
-    const rating = result.rating;
-    console.log(rating);
-    const profilePic = result.avatar
-    console.log(profilePic)
-};
+const compileData = (people) => {
+    const id = people.id
+    const name = people.name;
+    const location = people.location;
+    const lorem = people.lorem;
+    const rating = people.rating;
+    const profilePic = people.avatar;
+    
+    const onePerson = {id, name, location, lorem, rating, profilePic}
+    makeCard(onePerson)   
+} 
 
+const makeCard = (onePerson, i) => { 
+    const container = document.getElementById('section');
+    const content = `   
+    <section class="card-container ${'person' +onePerson.id}">
+        <section class="card-text">
+            <h2 class="">${onePerson.name}</h2>
+            <h3>${onePerson.location}</h3>
+            <p>${onePerson.lorem}</p>
+            <span>${onePerson.rating}</span>
+        </section>
+        <section class="card-img">
+            <img src="${onePerson.profilePic}" alt="">
+        </section>
 
-
-
-
-
-
-
-
+    </section>
+    `
+    container.innerHTML += content;
+}
