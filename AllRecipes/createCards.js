@@ -2,8 +2,8 @@
 import {Search} from "./fetchApi.js";
 
 //Change the buttons images when you click or unclick them
-    //Get your a tag element out of your html by the classname
-    const buttons = document.querySelectorAll(".plusImage");
+//Get your a tag element out of your html by the classname
+const buttons = document.querySelectorAll(".plusImage");
 
 const changeButtonImage = (index) => {
     const selectedElement = buttons[index];
@@ -35,6 +35,7 @@ const changeButtonImage = (index) => {
             }
         }
     }
+}
 
     /**
      * This function creates a click event listener on all plusmark images and
@@ -64,4 +65,4 @@ const changeButtonImage = (index) => {
                 Search();
             }
         });
-        console.log(formInput.value);}
+        console.log(formInput.value);
