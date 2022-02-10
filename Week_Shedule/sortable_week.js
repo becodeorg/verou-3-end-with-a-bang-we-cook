@@ -1,3 +1,4 @@
+//drag and drop menu's
 //followed this guide: https://www.html5rocks.com/en/tutorials/dnd/basics//
 document.addEventListener('DOMContentLoaded', (event) => {
 var dragSrcEl=null;
@@ -34,6 +35,7 @@ function handleDrop(e) {
     // Set the source column's HTML to the HTML of the column we dropped on.
     dragSrcEl.innerHTML = this.innerHTML;
     this.innerHTML = e.dataTransfer.getData('text/html');
+    //TODO: write code to localstorage get and set the order of the array.
   }
 
   return false;
@@ -53,7 +55,7 @@ items.forEach(function (item) {
 });
 
 
-//weekshedule
+//weekshedule 
 const createDayElements=()=>{
   const days=document.getElementById("weekDays");
   const d = new Date();
@@ -76,7 +78,7 @@ const newDay=(currentDay)=>{
 
 createDayElements();
 
-
+//temporary fetch
 fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
     .then(response => response.json())
     .then(data => {

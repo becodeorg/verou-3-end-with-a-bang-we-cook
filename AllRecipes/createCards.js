@@ -7,12 +7,12 @@ const changeButtonImage = (index) => {
     const selectedElement = buttons[index]
     console.log(selectedElement.src);
     if(selectedElement.src.includes("plusmark.png")){
-        selectedElement.classList.add("selected");
+        localStorage.setItem(selectedElement,selectedElement.getAttribute);
         selectedElement.src = "checkmark.png";
     }
     else{
         selectedElement.src = "plusmark.png";
-        selectedElement.classList.remove("selected");
+        localStorage.removeItem(selectedElement);
     }
     console.log(selectedElement);
 }
