@@ -67,7 +67,11 @@
 
  li{
   
-    margin-left: 1rem;
+    margin-left: 0.3rem;
+ }
+
+ .ingredientsLi{
+     margin-left: 2rem;
  }
 
  @media only screen and (min-with: 426px) and (max-with: 768px) {
