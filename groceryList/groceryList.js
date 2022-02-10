@@ -2,8 +2,8 @@ import bigList from "./javaScript/bigList.js"
 import groceryListLoop from "./javaScript/groceryList.js"
 
 let values=JSON.parse(localStorage.getItem("chosenRecipe"));
-for (let i = 0; i < values.length; i++){
-fetch(values[i])
+for (let a = 0; a < values.length; a++){
+fetch(values[a])
     .then(response => response.json())
     .then(data => {
         console.log(data);

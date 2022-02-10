@@ -53,7 +53,7 @@ let bigList = (data) => {
         //create ingredientsParagraph
         let ingredientsLi = createLiElement();
         ingredientsLi.className = "ingredientsLi";
-        ingredientsLi.innerHTML = data.hits[i].recipe.ingredients[i].food;
+        ingredientsLi.innerHTML = data.recipe.ingredients[i].food;
         bigListIngredientsHolder.appendChild(ingredientsLi);
     }
     const email = createDivElement();
