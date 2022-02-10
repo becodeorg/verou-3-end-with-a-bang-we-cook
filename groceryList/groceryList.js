@@ -25,10 +25,17 @@ pageTitle.innerHTML = "Shopping List";
 main.append(pageTitle);
 
 const listButton = document.createElement("button");
-listButton.className = "bigListButton";
+listButton.id = "bigListButton";
 listButton.innerHTML = "Get The Whole List"
 pageTitle.appendChild(listButton);
-console.log("listButton");
+
+
+
+
+listButton.addEventListener("click", function (){
+    const change = document.getElementById("bigListBody").style.display ="flex";
+});
+
 
 
 // TODO create Input Customer

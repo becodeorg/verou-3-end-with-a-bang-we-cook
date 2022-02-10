@@ -35,13 +35,16 @@ const changeButtonImage = (index) => {
             }
         }
     }
-}
 
+    /**
+     * This function creates a click event listener on all plusmark images and
+     * calls the changeButtonImage function whenever these images are clicked
+     */
     buttons.forEach((button, index) => {
-        button.addEventListener("click", () => {
-            changeButtonImage(index)
-        });
-    })
+            button.addEventListener("click", () => {
+                changeButtonImage(index)
+            });
+        })
 
 //Add an event listener to the search button
     //Get your search button out of your html by classname
@@ -51,11 +54,14 @@ const changeButtonImage = (index) => {
     //Add an event listener on the search button
     searchButton.addEventListener("click", Search);
 
+    /**
+     * Because off this function you can search by pressing enter
+     */
     //Make a function for searching by pressing enter
-    formInput.addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            Search();
-        }
-    });
-    console.log(formInput.value);
+        formInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                Search();
+            }
+        });
+        console.log(formInput.value);}

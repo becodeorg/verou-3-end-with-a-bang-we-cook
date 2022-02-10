@@ -23,7 +23,7 @@ const mainElement = document.querySelector("main");
 let bigList = (data) => {
 
     const bigListBody = createDivElement();
-    bigListBody.className = ("bigListBody");
+    bigListBody.id = ("bigListBody");
     mainElement.appendChild(bigListBody);
 
     const bigListTitle = createH3Element();
