@@ -1,9 +1,19 @@
 import addEveryWeekDay from "./addEveryWeekDay.js";
-import {createDivElement} from "./createElements.js";
-import {createH3Element} from "./createElements.js";
-import {createUlElement} from "./createElements.js";
-import {createLiElement} from "./createElements.js";
-import {checkBoxElement} from "./createElements.js";
+import {
+    createDivElement
+} from "./createElements.js";
+import {
+    createH3Element
+} from "./createElements.js";
+import {
+    createUlElement
+} from "./createElements.js";
+import {
+    createLiElement
+} from "./createElements.js";
+import {
+    checkBoxElement
+} from "./createElements.js";
 
 const mainElement = document.querySelector("main");
 
@@ -18,16 +28,16 @@ let groceryListLoop = (data) => {
         const groceryListTitle = createH3Element();
         groceryListTitle.innerHTML = (data.recipe.label);
         groceryListBody.appendChild(groceryListTitle);
-    }
-    for (let z = 0; z < 7; z++){
+
         // create date Holder
         const date = createDivElement();
         date.className = ("date");
-        date.innerText = addEveryWeekDay()[z];
+        date.innerText = addEveryWeekDay()[l];
         groceryListBody.appendChild(date);
         ingredientsLoop(groceryListBody, data);
     }
 }
+
 // ingredients element LOOP
 let ingredientsLoop = (groceryListBody, data) => {
     // create a loop for ingredients
