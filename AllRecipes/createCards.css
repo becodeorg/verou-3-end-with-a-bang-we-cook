@@ -17,6 +17,17 @@ body {
     height: 100%;
 }
 
+.searchBar {
+    display: flex;
+    justify-content: center;
+    height: 25px;
+}
+
+.searchBarButton {
+    margin-left: 5px;
+    padding: 2px;
+}
+
 .container {
     justify-content: center;
     margin: auto;
@@ -30,7 +41,7 @@ body {
 
 .card {
     justify-self: center;
-    height: 350px;
+    height: 400px;
     max-width: 270px;
     border: 3px solid var(--color-neutral);
     border-radius: 5px;
