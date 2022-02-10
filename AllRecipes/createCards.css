@@ -34,7 +34,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 10px;
-    width: 80%;
+    width: 90%;
     padding-top: 20px;
     object-position: center
 }
@@ -43,6 +43,7 @@ body {
     justify-self: center;
     height: 400px;
     max-width: 270px;
+    margin: 10px;
     border: 3px solid var(--color-neutral);
     border-radius: 5px;
     overflow: hidden;
@@ -64,12 +65,19 @@ body {
 
 .cardcontent-container {
     padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .buttons {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    margin-right: 20px;
+    justify-content: center;
+}
+
+.buttonRecipe {
+    padding: 5px;
 }
 
 
