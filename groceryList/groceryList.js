@@ -53,6 +53,11 @@ const checkBoxElement = () => {
     return checkBox;
 }
 const main = document.querySelector("main");
+const pageTitle = createDivElement();
+pageTitle.className = "pageTitle";
+pageTitle.innerHTML = "Shopping List";
+main.append(pageTitle);
+console.log(pageTitle);
 
 let groceryListLoop = (data) => {
     for (let l = 0; l < 7; l++) {
@@ -86,6 +91,7 @@ let ingredientsLoop = (groceryListBody, data) => {
 
         // create checkBox
         const checkBox = checkBoxElement();
+        checkBox.className = ("checkBox")
         ingredientsHolder.appendChild(checkBox);
 
         let amount = createLiElement();
@@ -102,12 +108,7 @@ let ingredientsLoop = (groceryListBody, data) => {
         let ingredientsParagraph = createLiElement();
         ingredientsParagraph.className = "ingredientsLi";
         ingredientsParagraph.innerHTML = data.hits[0].recipe.ingredients[i].food;
-        ingredientsHolder.appendChild(ingredientsParagraph);
-
-       
-
-    
-        
+        ingredientsHolder.appendChild(ingredientsParagraph);    
     }
 
 }
