@@ -12,11 +12,6 @@
      box-sizing: border-box;
  }
 
- .border,
- .groceryListBody {
-     border: 2px solid black;
- }
-
  body {
      background-color: let(--color-neutral);
  }
@@ -31,8 +26,8 @@
      text-align: center;
      margin-bottom: 1rem;
  }
-
- .groceryListBody {
+ 
+ .groceryListBody, .bigListBody{
      display: flex;
      flex-direction: column;
      justify-content: center;
