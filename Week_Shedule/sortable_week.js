@@ -78,14 +78,14 @@ const newDay=(currentDay)=>{
 
 createDayElements();
 
-//temporary fetch=> wordt nieuwe fetch afhankelijk van localstorage
+//temporary fetch=> wordt nieuwe fetch afhankelijk van localstorage=> mss niet meer nodig?
 const fetchRecipe=(selectedRecipe)=>{
   fetch(selectedRecipe)
       .then(response => response.json())
       .then(data => {
         
         console.log(data);
-        return data;
+ //       return data;
           
   });
 }
@@ -93,7 +93,8 @@ const fetchRecipe=(selectedRecipe)=>{
 const addDataToCards=()=>{
   const selectedRecipes=readLocalData();
   
-  for(let i=0;i<7;i++){
+  for(let i=0;i<selectedRecipes.length;i++){
+    console.log(selectedRecipes[i]);
     fetchRecipe(selectedRecipes[i]);
   }
 }
@@ -103,9 +104,9 @@ const readLocalData=()=>{
   let keys = Object.keys(localStorage)
   let i = keys.length;
   console.log (i);
-
     while ( i-- ) {
         values.push( localStorage.getItem(keys[i]) );
+        localStorage.removeItem(keys[i]);
     }
     console.log(values);
 

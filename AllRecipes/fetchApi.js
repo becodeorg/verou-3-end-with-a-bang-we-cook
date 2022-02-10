@@ -7,19 +7,39 @@ const fetchRecipes=(query)=>{
             addDataToCards(data);
     });
 }
+const fetchRecipe=(recipe,i)=>{
+  fetch(recipe)
+  .then(response => response.json())
+  .then(data => {
+      console.log(data);
+      addDataToSelectedCards(data,i);
+});
+}
 
-const addSelectedToarray=()=>{
-    let dataArray=[];
-    let allSelected=document.getElementsByClassName("selected");
-    for(let i=0;i<allSelected.length;i++){
-        dataArray[i]= localStorage.getItem(key, allSelected[i].parent.parent.getAttribute());
+const alreadySelectedToarray=()=>{
+  let values = []
+  let keys = Object.keys(localStorage)
+  let i = keys.length;
+    while ( i-- ) {
+        values.push( localStorage.getItem(keys[i]) );
+        
     }
+    return values;
+}
+const addDataToSelectedCards=(data,i)=>{
+  console.log(data);
+  // document.getElementsByClassName("image")[i].children[0].src=data.recipe.image;
+  // document.getElementsByClassName("title")[i].children[0].innerText=data.recipe.label;      
+  // document.querySelectorAll(".plusImage")[i].setAttribute("attribute",data);   
 }
 
 const addDataToCards=(data)=>{
-   
-   for(let i=0;i<20;i++)
-    { document.getElementsByClassName("image")[i].children[0].src=data.hits[i].recipe.image;
+   const alreadySelected=alreadySelectedToarray();
+   for(let i=0;i<alreadySelected.length;i++){
+    addDataToSelectedCards(alreadySelected[i],i);//add data to already selected cards    
+   }
+   for(let i=alreadySelected.length;i<19;i++)
+   {  document.getElementsByClassName("image")[i].children[0].src=data.hits[i].recipe.image;
       document.getElementsByClassName("title")[i].children[0].innerText=data.hits[i].recipe.label;      
       document.querySelectorAll(".plusImage")[i].setAttribute("attribute",data.hits[i]._links.self.href);
     }
@@ -28,9 +48,9 @@ const addDataToCards=(data)=>{
 export const Search=()=>{
     const input = document.getElementById("searchBar").value;
   if(input == ""){
-    fetchRecipes('lunch');
+    fetchRecipes('lunch');    
   }else{
-    fetchRecipes(input.toLowerCase());
+    fetchRecipes(input.toLowerCase())
     }
 }
 

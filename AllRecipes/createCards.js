@@ -8,15 +8,32 @@ import {Search} from "./fetchApi.js";
 const changeButtonImage = (index) => {
     const selectedElement = buttons[index];
     if(selectedElement.src.includes("plusmark.png")){
-        console.log(selectedElement);
-        localStorage.setItem(selectedElement.getAttribute("attribute"),selectedElement.getAttribute("attribute"));
+
+        if(localStorage.getItem("chosenRecipe")){
+            console.log("local storage is true");
+            let values=JSON.parse(localStorage.getItem("chosenRecipe"));
+            let newValue=selectedElement.getAttribute("attribute");
+            values.push(newValue);
+            localStorage.setItem("chosenRecipe",JSON.stringify(values));
+        }else {
+            console.log("local storage is false")
+            const startValue=[
+               selectedElement.getAttribute("attribute")
+            ];
+            
+            localStorage.setItem("chosenRecipe",JSON.stringify(startValue));
+        }
         selectedElement.src = "checkmark.png";
-        console.log(localStorage.getItem(selectedElement.getAttribute("attribute")));
     }
     else{
         selectedElement.src = "plusmark.png";
-        localStorage.removeItem(selectedElement.getAttribute("attribute"));
-        console.log(localStorage.getItem(selectedElement.getAttribute("attribute")));
+        let values=JSON.parse(localStorage.getItem("chosenRecipe"));
+        for(let i=0;i<values.length;i++){
+            if(values[i]==selectedElement.getAttribute("attribute")){
+                values.splice(i,1);
+                localStorage.setItem("chosenRecipe",JSON.stringify(values))
+            }
+        }
     }
 }
 
