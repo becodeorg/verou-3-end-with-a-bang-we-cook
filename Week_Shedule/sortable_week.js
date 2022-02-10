@@ -78,7 +78,7 @@ const newDay=(currentDay)=>{
 
 createDayElements();
 
-//temporary fetch
+//temporary fetch=> wordt nieuwe fetch afhankelijk van localstorage
 fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
     .then(response => response.json())
     .then(data => {
@@ -87,7 +87,7 @@ fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4
 });
 //send all info to the groceries
 const addDataToCards=(data)=>{
-  document.getElementById("sendButton").addEventListener("click", sendData);
+  
 }
 const sendData=()=>{
   const week=document.getElementById("week");
