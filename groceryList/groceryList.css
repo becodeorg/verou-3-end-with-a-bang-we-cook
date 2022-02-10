@@ -27,33 +27,45 @@
      margin-bottom: 1rem;
  }
 
-.bigListButton{
-margin-left: 0.5rem;
-padding: 0.5rem;
-}
-.bigListBody{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 98%;
-    height: auto;
-    margin-left: 0.2rem;
-    margin-bottom: 1rem;
-    border-style: solid;
-    border-radius: 5px;
-    border-color: #D35A2A;
+ .bigListButton {
+     margin-left: 0.5rem;
+     padding: 0.5rem;
  }
 
- .bigListTitle{
+ .bigListBody {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     width: 98%;
+     height: auto;
+     margin-left: 0.2rem;
+     margin-bottom: 1rem;
+     border-style: solid;
+     border-radius: 5px;
+     border-color: #D35A2A;
+ }
+
+ .bigListTitle {
      margin-top: 1rem;
+     margin-bottom: 1rem;
      text-align: center;
  }
 
- ul.bigListIngredientsHolder{
-    display: flex;
-    flex-direction: row;
-    margin: 0.5rem;
-    list-style-type: none;
+ ul.bigListIngredientsHolder {
+     display: flex;
+     flex-direction: row;
+     margin: 0.5rem;
+     list-style-type: none;
+ }
+
+ .email {
+     margin-left: 4.5rem;
+     margin-top: 1rem;
+     margin-bottom: 1rem;
+     padding: 0.5rem;
+     text-align: center;
+     width: 100px;
+   
  }
 
  .groceryListBody {

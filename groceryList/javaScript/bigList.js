@@ -1,8 +1,21 @@
-import {createDivElement} from "./createElements.js";
-import {createH3Element} from "./createElements.js";
-import {createUlElement} from "./createElements.js";
-import {createLiElement} from "./createElements.js";
-import {checkBoxElement} from "./createElements.js";
+import {
+    createDivElement
+} from "./createElements.js";
+import {
+    createH3Element
+} from "./createElements.js";
+import {
+    createUlElement
+} from "./createElements.js";
+import {
+    createLiElement
+} from "./createElements.js";
+import {
+    checkBoxElement
+} from "./createElements.js";
+import {
+    createParagraphElement
+} from "./createElements.js";
 
 
 const mainElement = document.querySelector("main");
@@ -38,11 +51,17 @@ let bigList = (data) => {
         bigListIngredientsHolder.appendChild(measure);
 
         //create ingredientsParagraph
-        let ingredientsParagraph = createLiElement();
-        ingredientsParagraph.className = "ingredientsLi";
-        ingredientsParagraph.innerHTML = data.hits[i].recipe.ingredients[i].food;
-        bigListIngredientsHolder.appendChild(ingredientsParagraph);
+        let ingredientsLi = createLiElement();
+        ingredientsLi.className = "ingredientsLi";
+        ingredientsLi.innerHTML = data.hits[i].recipe.ingredients[i].food;
+        bigListIngredientsHolder.appendChild(ingredientsLi);
     }
+    const email = createDivElement();
+        email.className = "email";
+        bigListBody.appendChild(email);
+        const aTag = document.createElement('input')
+        aTag.setAttribute('placeholder','Enter your Email here');
+        email.appendChild(aTag);
 }
 
 export default bigList;
