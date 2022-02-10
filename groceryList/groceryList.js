@@ -15,11 +15,11 @@ const addEveryWeekDay = () => {
     return everyDay;
 }
 addEveryWeekDay();
+
 fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        console.log(data.hits[0].recipe.ingredients[0].quantity);
         groceryListLoop(data);
     });
 
@@ -27,41 +27,37 @@ fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4
 
 // TODO events on Card in random Card Pick 
 // TODO Look in Variables for links
-// TODO Check out ingredients measure options
 const createDivElement = () => {
     const newDiv = document.createElement("div");
     return newDiv;
 }
-
 const createParagraphElement = () => {
     const newParagraph = document.createElement("p");
     return newParagraph;
 }
-
 const createH3Element = () => {
     const newH3 = document.createElement("h3");
     return newH3;
 }
-
 const createUlElement = () => {
     const newUl = document.createElement("ul")
     return newUl;
 }
-
 const createLiElement = () => {
     const newLi = document.createElement("li");
     return newLi;
 }
-
 const checkBoxElement = () => {
     let checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
     return checkBox;
 }
-
-
-// Link to HTML
 const main = document.querySelector("main");
+const pageTitle = createDivElement();
+pageTitle.className = "pageTitle";
+pageTitle.innerHTML = "Shopping List";
+main.append(pageTitle);
+console.log(pageTitle);
 
 let groceryListLoop = (data) => {
     for (let l = 0; l < 7; l++) {
@@ -72,7 +68,7 @@ let groceryListLoop = (data) => {
 
         // create groceryList Title
         const groceryListTitle = createH3Element();
-        groceryListTitle.innerHTML = ("Shopping List");
+        groceryListTitle.innerHTML = (data.hits[l].recipe.label);
         groceryListBody.appendChild(groceryListTitle);
 
         // create date Holder
@@ -81,14 +77,8 @@ let groceryListLoop = (data) => {
         date.innerText = addEveryWeekDay()[l];
         groceryListBody.appendChild(date);
         ingredientsLoop(groceryListBody, data);
-
-        const recipe = createParagraphElement();
-        recipe.innerHTML = (data.hits[0].recipe.label);
-        date.appendChild(recipe);
     }
 }
-
-
 // ingredients element LOOP
 let ingredientsLoop = (groceryListBody, data) => {
     // create a loop for ingredients
@@ -101,48 +91,28 @@ let ingredientsLoop = (groceryListBody, data) => {
 
         // create checkBox
         const checkBox = checkBoxElement();
+        checkBox.className = ("checkBox")
         ingredientsHolder.appendChild(checkBox);
 
         let amount = createLiElement();
-        amount.innerHTML = "10";
+        amount.innerHTML = data.hits[0].recipe.ingredients[i].quantity.toPrecision(2);
         ingredientsHolder.appendChild(amount);
 
         let measure = createLiElement();
-        measure.innerHTML = "cups";
+        measure.innerHTML = data.hits[0].recipe.ingredients[i].measure;
         ingredientsHolder.appendChild(measure);
 
         
 
         //create ingredientsParagraph
         let ingredientsParagraph = createLiElement();
+        ingredientsParagraph.className = "ingredientsLi";
         ingredientsParagraph.innerHTML = data.hits[0].recipe.ingredients[i].food;
-        ingredientsHolder.appendChild(ingredientsParagraph);
-
-       
-
-    
-        
+        ingredientsHolder.appendChild(ingredientsParagraph);    
     }
 
 }
 
-
-
-
-
-
-//  // create recipeNameParagraph
-//  let recipeNameParagraph = createLiElement();
-//  recipeNameParagraph.innerHTML = data.hits[i].recipe.label; // recipe Name
-//  ingredientsHolder.appendChild(recipeNameParagraph);
-//  console.log(recipeNameParagraph); // log check
-
-// TODO create nodes for api data
-// TODO create check box ? 
-// TODO ingredients quantity's
-// TODO ingredients types ? 
-// TODO ingredients name paragraph
-// TODO ingredients amount
 // TODO create Input Customer
 // TODO groceryList Mail option?
 console.log("Push the Button");
