@@ -1,7 +1,5 @@
-import addEveryWeekDay from "./javaScript/addEveryWeekDay.js";
 import bigList from "./javaScript/bigList.js"
 import groceryListLoop from "./javaScript/groceryList.js"
-addEveryWeekDay();
 
 fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
     .then(response => response.json())
@@ -31,9 +29,6 @@ listButton.className = "bigListButton";
 listButton.innerHTML = "Get The Whole List"
 pageTitle.appendChild(listButton);
 console.log("listButton");
-
-
-
 
 
 // TODO create Input Customer

@@ -1,30 +1,10 @@
 import addEveryWeekDay from "./addEveryWeekDay.js";
+import {createDivElement} from "./createElements.js";
+import {createH3Element} from "./createElements.js";
+import {createUlElement} from "./createElements.js";
+import {createLiElement} from "./createElements.js";
+import {checkBoxElement} from "./createElements.js";
 
-const createDivElement = () => {
-    const newDiv = document.createElement("div");
-    return newDiv;
-}
-const createParagraphElement = () => {
-    const newParagraph = document.createElement("p");
-    return newParagraph;
-}
-const createH3Element = () => {
-    const newH3 = document.createElement("h3");
-    return newH3;
-}
-const createUlElement = () => {
-    const newUl = document.createElement("ul")
-    return newUl;
-}
-const createLiElement = () => {
-    const newLi = document.createElement("li");
-    return newLi;
-}
-const checkBoxElement = () => {
-    let checkBox = document.createElement("input");
-    checkBox.setAttribute("type", "checkbox");
-    return checkBox;
-}
 const mainElement = document.querySelector("main");
 
 let groceryListLoop = (data) => {
