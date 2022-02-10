@@ -20,6 +20,7 @@ fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4
     .then(response => response.json())
     .then(data => {
         console.log(data);
+        bigList(data);
         groceryListLoop(data);
     });
 
@@ -58,6 +59,38 @@ pageTitle.className = "pageTitle";
 pageTitle.innerHTML = "Shopping List";
 main.append(pageTitle);
 console.log(pageTitle);
+let bigList = (data) => {
+    const bigListBody = createDivElement();
+        bigListBody.className = ("bigListBody");
+        main.appendChild(bigListBody);
+    
+    // create ingredientsHolder
+    const ingredientsHolder = createUlElement();
+    ingredientsHolder.className = ("ingredientsHolder");
+    bigListBody.appendChild(ingredientsHolder);
+
+    for (let i = 0; i < data.hits[0].recipe.ingredients.length; i++) {
+
+        // create checkBox
+        const checkBox = checkBoxElement();
+        checkBox.className = ("checkBox")
+        ingredientsHolder.appendChild(checkBox);
+
+        let amount = createLiElement();
+        amount.innerHTML = data.hits[0].recipe.ingredients[i].quantity.toPrecision(2);
+        ingredientsHolder.appendChild(amount);
+
+        let measure = createLiElement();
+        measure.innerHTML = data.hits[0].recipe.ingredients[i].measure;
+        ingredientsHolder.appendChild(measure);
+
+        //create ingredientsParagraph
+        let ingredientsParagraph = createLiElement();
+        ingredientsParagraph.className = "ingredientsLi";
+        ingredientsParagraph.innerHTML = data.hits[0].recipe.ingredients[i].food;
+        ingredientsHolder.appendChild(ingredientsParagraph);
+    }
+}
 
 let groceryListLoop = (data) => {
     for (let l = 0; l < 7; l++) {
@@ -102,13 +135,11 @@ let ingredientsLoop = (groceryListBody, data) => {
         measure.innerHTML = data.hits[0].recipe.ingredients[i].measure;
         ingredientsHolder.appendChild(measure);
 
-        
-
         //create ingredientsParagraph
         let ingredientsParagraph = createLiElement();
         ingredientsParagraph.className = "ingredientsLi";
         ingredientsParagraph.innerHTML = data.hits[0].recipe.ingredients[i].food;
-        ingredientsHolder.appendChild(ingredientsParagraph);    
+        ingredientsHolder.appendChild(ingredientsParagraph);
     }
 
 }
