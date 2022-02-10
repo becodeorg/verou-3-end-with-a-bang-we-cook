@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://use.typekit.net/grq4uwx.css">
     <link rel="stylesheet" href="createCards.css">
-    <script src="fetchApi.js" defer></script>
-    <script src="createCards.js" defer></script>
+    <script type="module" src="fetchApi.js" defer></script>
+    <script type="module" src="createCards.js" defer></script>
 
 </head>
 <body>
@@ -24,8 +24,8 @@
             <a href="../groceryList/groceryList.html">Shopping list</a>
         </section>
     </nav>
-    <form class="searchBar">
-        <input type="search">
+    <form class="searchFunction">
+        <input type="search" id="searchBar">
         <button type="button" class="searchBarButton">Search</button>
     </form>
     <div class="container">
