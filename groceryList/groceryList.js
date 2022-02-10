@@ -53,42 +53,54 @@ const checkBoxElement = () => {
     checkBox.setAttribute("type", "checkbox");
     return checkBox;
 }
+
 const main = document.querySelector("main");
 const pageTitle = createDivElement();
 pageTitle.className = "pageTitle";
 pageTitle.innerHTML = "Shopping List";
 main.append(pageTitle);
-console.log(pageTitle);
+
+const listButton = document.createElement("button");
+listButton.className = "bigListButton";
+listButton.innerHTML = "Get The Whole List"
+pageTitle.appendChild(listButton);
+console.log("listButton");
+
 let bigList = (data) => {
+
     const bigListBody = createDivElement();
-        bigListBody.className = ("bigListBody");
-        main.appendChild(bigListBody);
-    
-    // create ingredientsHolder
-    const ingredientsHolder = createUlElement();
-    ingredientsHolder.className = ("ingredientsHolder");
-    bigListBody.appendChild(ingredientsHolder);
+    bigListBody.className = ("bigListBody");
+    main.appendChild(bigListBody);
+
+    const bigListTitle = createH3Element();
+    bigListTitle.className = ("bigListTitle")
+    bigListTitle.innerHTML = ("Big Shopping List");
+    bigListBody.appendChild(bigListTitle);
 
     for (let i = 0; i < data.hits[0].recipe.ingredients.length; i++) {
+
+        const bigListIngredientsHolder = createUlElement();
+        bigListIngredientsHolder.className = ("bigListIngredientsHolder");
+        bigListBody.appendChild(bigListIngredientsHolder);
 
         // create checkBox
         const checkBox = checkBoxElement();
         checkBox.className = ("checkBox")
-        ingredientsHolder.appendChild(checkBox);
+        bigListIngredientsHolder.append(checkBox);
 
         let amount = createLiElement();
         amount.innerHTML = data.hits[0].recipe.ingredients[i].quantity.toPrecision(2);
-        ingredientsHolder.appendChild(amount);
+        bigListIngredientsHolder.appendChild(amount);
 
         let measure = createLiElement();
         measure.innerHTML = data.hits[0].recipe.ingredients[i].measure;
-        ingredientsHolder.appendChild(measure);
+        bigListIngredientsHolder.appendChild(measure);
 
         //create ingredientsParagraph
         let ingredientsParagraph = createLiElement();
         ingredientsParagraph.className = "ingredientsLi";
-        ingredientsParagraph.innerHTML = data.hits[0].recipe.ingredients[i].food;
-        ingredientsHolder.appendChild(ingredientsParagraph);
+        ingredientsParagraph.innerHTML = data.hits[i].recipe.ingredients[i].food;
+        bigListIngredientsHolder.appendChild(ingredientsParagraph);
     }
 }
 
