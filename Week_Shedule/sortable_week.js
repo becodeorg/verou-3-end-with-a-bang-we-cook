@@ -79,21 +79,30 @@ const newDay=(currentDay)=>{
 createDayElements();
 
 //temporary fetch=> wordt nieuwe fetch afhankelijk van localstorage
-fetch('https://api.edamam.com/api/recipes/v2?type=public&q=british&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
-    .then(response => response.json())
-    .then(data => {
-        //console.log(data);
-        //addDataToCards(data);
-});
+const fetchRecipe=(selectedRecipe)=>{
+  fetch(selectedRecipe)
+      .then(response => response.json())
+      .then(data => {
+        
+        console.log(data);
+        return data;
+          
+  });
+}
 //send all info to the groceries
 const addDataToCards=()=>{
-  readLocalData();
+  const selectedRecipes=readLocalData();
   
+  for(let i=0;i<7;i++){
+    fetchRecipe(selectedRecipes[i]);
+  }
 }
 const readLocalData=()=>{ 
+  if (localStorage!=null){
   let values = []
   let keys = Object.keys(localStorage)
   let i = keys.length;
+  console.log (i);
 
     while ( i-- ) {
         values.push( localStorage.getItem(keys[i]) );
@@ -101,6 +110,9 @@ const readLocalData=()=>{
     console.log(values);
 
     return values;
+  }else{
+    alert('please select your recipes first');
+  }
 
 }
 const sendData=()=>{
