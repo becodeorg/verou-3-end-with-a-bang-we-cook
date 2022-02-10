@@ -57,11 +57,16 @@ let bigList = (data) => {
         bigListIngredientsHolder.appendChild(ingredientsLi);
     }
     const email = createDivElement();
-        email.className = "email";
-        bigListBody.appendChild(email);
-        const aTag = document.createElement('input')
-        aTag.setAttribute('placeholder','Enter your Email here');
-        email.appendChild(aTag);
+    email.className = "email";
+    bigListBody.appendChild(email);
+    const aTag = document.createElement('input')
+    aTag.setAttribute('placeholder', '  Enter your Email here');
+    email.appendChild(aTag);
+    const button = document.createElement("button");
+    button.className = "eMailButton";
+    button.innerText = "Send List";
+    email.appendChild(button);
+
 }
 
 export default bigList;

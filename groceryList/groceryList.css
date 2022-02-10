@@ -23,8 +23,17 @@
  }
 
  .pageTitle {
+     display: flex;
+     flex-direction: column;
      text-align: center;
      margin-bottom: 1rem;
+ }
+
+ button.bigListButton{
+     width: 200px;
+     text-align: center;
+     margin-top: 1rem;
+     margin-left: 3.8rem;
  }
 
  .bigListButton {
@@ -65,7 +74,14 @@
      padding: 0.5rem;
      text-align: center;
      width: 100px;
-   
+ }
+
+ .eMailButton {
+     width: 71px;
+     display: flex;
+     margin-left: 35px;
+     padding: 0.5rem;
+     margin-top: 0.5rem
  }
 
  .groceryListBody {
