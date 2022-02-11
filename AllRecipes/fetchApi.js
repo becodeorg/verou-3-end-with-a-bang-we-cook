@@ -35,7 +35,9 @@ const addDataToSelectedCards=async(data,index)=>{
   const recepiId=getRecipeId(data);
    document.getElementsByClassName("image")[index].children[0].src=data.recipe.image;
    document.getElementsByClassName("title")[index].children[0].innerText=data.recipe.label;      
-   document.querySelectorAll(".plusImage")[index].setAttribute("attribute",recepiId);
+   document.querySelectorAll(".plusImage")[index].setAttribute("id",recepiId);
+   document.querySelectorAll(".plusImage")[index].setAttribute("img",data.recipe.image);
+   document.querySelectorAll(".plusImage")[index].setAttribute("title",data.recipe.label);
    document.querySelectorAll(".plusImage")[index].src = "checkmark.png";
    document.getElementsByClassName("buttonRecipe")[index].innerHTML="<a href='"+data.recipe.url+"'target='_blank' alt='Broken Link'>view recipe</a>"
 }
@@ -48,7 +50,9 @@ const addDataToCards=async(data)=>{
    {  let recepisId=getRecipesId(data,i);
       document.getElementsByClassName("image")[i].children[0].src=data.hits[i].recipe.image;
       document.getElementsByClassName("title")[i].children[0].innerText=data.hits[i].recipe.label;      
-      document.querySelectorAll(".plusImage")[i].setAttribute("attribute",recepisId);
+      document.querySelectorAll(".plusImage")[i].setAttribute("id",recepisId);
+      document.querySelectorAll(".plusImage")[i].setAttribute("img",data.hits[i].recipe.image);
+      document.querySelectorAll(".plusImage")[i].setAttribute("title",data.hits[i].recipe.label);
       document.querySelectorAll(".plusImage")[i].src = "plusmark.png";
       document.getElementsByClassName("buttonRecipe")[i].innerHTML="<a href='"+data.hits[i].recipe.url+"' alt='Broken Link' target='_blank'>view recipe</a>"
     }
@@ -60,7 +64,9 @@ const addDataToCards=async(data)=>{
    { let recepisId=getRecipesId(data,i); 
      document.getElementsByClassName("image")[i].children[0].src=data.hits[i].recipe.image;
       document.getElementsByClassName("title")[i].children[0].innerText=data.hits[i].recipe.label;      
-      document.querySelectorAll(".plusImage")[i].setAttribute("attribute",recepisId);
+      document.querySelectorAll(".plusImage")[i].setAttribute("id",recepisId);
+      document.querySelectorAll(".plusImage")[i].setAttribute("img",data.hits[i].recipe.image);
+      document.querySelectorAll(".plusImage")[i].setAttribute("title",data.hits[i].recipe.label);
       document.querySelectorAll(".plusImage")[i].src = "plusmark.png";
       document.getElementsByClassName("buttonRecipe")[i].innerHTML="<a href='"+data.hits[i].recipe.url+"' alt='Broken Link' target='_blank'>view recipe</a>"
     }
