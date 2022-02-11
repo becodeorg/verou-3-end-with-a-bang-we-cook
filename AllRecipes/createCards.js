@@ -11,17 +11,34 @@ const changeButtonImage = (index) => {
 
         if(localStorage.getItem("chosenRecipe")){
            //puts new values in localstorage
-            let values=JSON.parse(localStorage.getItem("chosenRecipe"));
-            let newValue=selectedElement.getAttribute("attribute");
-            values.push(newValue);
-            localStorage.setItem("chosenRecipe",JSON.stringify(values));
+            let valuesRecipe=JSON.parse(localStorage.getItem("chosenRecipe"));
+            let newValueRecipe=selectedElement.getAttribute("id");
+            valuesRecipe.push(newValueRecipe);
+            localStorage.setItem("chosenRecipe",JSON.stringify(valuesRecipe));
+
+            let valuesImage=JSON.parse(localStorage.getItem("chosenImage"));
+            let newValueImage=selectedElement.getAttribute("img");
+            valuesImage.push(newValueImage);
+            localStorage.setItem("chosenImage",JSON.stringify(valuesImage));
+
+            let valuesTitle=JSON.parse(localStorage.getItem("chosenTitle"));
+            let newValueTitle=selectedElement.getAttribute("title");
+            valuesTitle.push(newValueTitle);
+            localStorage.setItem("chosenTitle",JSON.stringify(valuesTitle));
         }else {
             //puts the first value in local storage
             const startValue=[
-               selectedElement.getAttribute("attribute")
-            ];
-            
+               selectedElement.getAttribute("id")
+            ];            
             localStorage.setItem("chosenRecipe",JSON.stringify(startValue));
+            const startValueImg=[
+                selectedElement.getAttribute("img")
+             ];            
+             localStorage.setItem("chosenImage",JSON.stringify(startValueImg));
+             const startValueTitle=[
+                selectedElement.getAttribute("title")
+             ];            
+             localStorage.setItem("chosenTitle",JSON.stringify(startValueTitle));
         }
         selectedElement.src = "checkmark.png";
     }
@@ -30,10 +47,28 @@ const changeButtonImage = (index) => {
         let values=JSON.parse(localStorage.getItem("chosenRecipe"));
         //console.log(values);
         for(let i=0;i<values.length;i++){
-            if(values[i]==selectedElement.getAttribute("attribute")){
+            if(values[i]==selectedElement.getAttribute("id")){
                 //console.log("een localstorag item zou moeten verwijderen?")
                 values.splice(i,1);
                 localStorage.setItem("chosenRecipe",JSON.stringify(values))
+            }
+        }
+        values=JSON.parse(localStorage.getItem("chosenImage"));
+        //console.log(values);
+        for(let i=0;i<values.length;i++){
+            if(values[i]==selectedElement.getAttribute("img")){
+                //console.log("een localstorag item zou moeten verwijderen?")
+                values.splice(i,1);
+                localStorage.setItem("chosenImage",JSON.stringify(values))
+            }
+        }
+        values=JSON.parse(localStorage.getItem("chosenTitle"));
+        //console.log(values);
+        for(let i=0;i<values.length;i++){
+            if(values[i]==selectedElement.getAttribute("title")){
+                //console.log("een localstorag item zou moeten verwijderen?")
+                values.splice(i,1);
+                localStorage.setItem("chosenTitle",JSON.stringify(values))
             }
         }
     }

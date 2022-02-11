@@ -78,50 +78,16 @@ const newDay=(currentDay)=>{
 
 createDayElements();
 
-//temporary fetch=> wordt nieuwe fetch afhankelijk van localstorage=> mss niet meer nodig?
-const fetchRecipe=(selectedRecipe)=>{
-  fetch(selectedRecipe)
-      .then(response => response.json())
-      .then(data => {
-        
-        console.log(data);
- //       return data;
-          
-  });
-}
+
 //send all info to the groceries
 const addDataToCards=()=>{
-  const selectedRecipes=readLocalData();
+  const selectedImages=JSON.parse(localStorage.getItem("chosenImage"));
+  const selectedTitles=JSON.parse(localStorage.getItem("chosenTitle"));
   
-  for(let i=0;i<selectedRecipes.length;i++){
-    console.log(selectedRecipes[i]);
-    fetchRecipe(selectedRecipes[i]);
+  for(let i=0;i<selectedImages.length;i++){
+    document.getElementsByClassName("image")[i].src=selectedImages[i];
+    document.getElementsByClassName("title")[i].src=selectedTitles[i];
   }
 }
-const readLocalData=()=>{ 
-  if (localStorage!=null){
-  let values = []
-  let keys = Object.keys(localStorage)
-  let i = keys.length;
-  console.log (i);
-    while ( i-- ) {
-        values.push( localStorage.getItem(keys[i]) );
-        localStorage.removeItem(keys[i]);
-    }
-    console.log(values);
 
-    return values;
-  }else{
-    alert('please select your recipes first');
-  }
-
-}
-const sendData=()=>{
-  const week=document.getElementById("week");
-  let arrayData=[];
-  for (let i=0;i<7;i++){
-    arrayData[i]=week.children[i].innerHTML
-  }
-  return arrayData;
-}
 addDataToCards();
