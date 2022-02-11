@@ -27,9 +27,9 @@ const getRecipeId=(data)=>{
 }
 const getRecipesId=(data,i)=>{
   let myArray = data.hits[i].recipe.uri.split("_");
-  
   return myArray[1];
 }
+
 const addDataToSelectedCards=async(data,index)=>{
   
   const recepiId=getRecipeId(data);

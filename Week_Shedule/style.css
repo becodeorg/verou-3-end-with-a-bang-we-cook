@@ -19,6 +19,9 @@ body{
   color: var(--color-dark);
 }
 
+h3{
+  margin:20px;
+}
 .day{
     border: 3px solid var(--color-dark);
     background-color: #ddd;
@@ -56,4 +59,5 @@ button:hover{
 }
 .image{
   width: 10vw;
+  user-select: none;
 }
