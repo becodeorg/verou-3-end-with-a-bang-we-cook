@@ -5,7 +5,7 @@ const fetchRecipes=async(query)=>{
         .then(data => {
           console.log("oude data");
             console.log(data);
-            await addDataToCards(data);
+            addDataToCards(data);
     });
 }
 const fetchRecipe=async(recipe,index)=>{
