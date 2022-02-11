@@ -61,8 +61,7 @@ items.forEach(function (item) {
 const createDayElements=(i,selectedImages,selectedTitles,selectedUrls)=>{
     
   const newCard = document.createElement("div");
-  newCard.className = "weekDay"; //Create a card
-  
+  newCard.className = "weekDay"; //Create a card  
   
   const newDayTitle = document.createElement("h3"); //Create a Day
   newDayTitle.textContent = newDay(i);
