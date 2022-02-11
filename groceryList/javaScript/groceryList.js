@@ -29,18 +29,20 @@ let ingredientsLoop = (groceryListBody, data) => {
         checkBox.className = ("checkBox")
         ingredientsHolder.appendChild(checkBox);
 
+        let ingredientsParagraph = createLiElement();
+        ingredientsParagraph.className = "ingredientsLi";
+        ingredientsParagraph.innerHTML = data.recipe.ingredients[i].food;
+        ingredientsHolder.appendChild(ingredientsParagraph);
+
         let amount = createLiElement();
-        amount.innerHTML = data.recipe.ingredients[i].quantity.toPrecision(2);
+        amount.innerHTML = data.recipe.ingredients[i].quantity.toPrecision(1);
         ingredientsHolder.appendChild(amount);
 
         let measure = createLiElement();
         measure.innerHTML = data.recipe.ingredients[i].measure;
         ingredientsHolder.appendChild(measure);
 
-        let ingredientsParagraph = createLiElement();
-        ingredientsParagraph.className = "ingredientsLi";
-        ingredientsParagraph.innerHTML = data.recipe.ingredients[i].food;
-        ingredientsHolder.appendChild(ingredientsParagraph);
+       
     }
 }
 
@@ -58,14 +60,15 @@ let groceryListLoop = (data) => {
         groceryListTitle.innerHTML = (data.recipe.label);
         groceryListBody.appendChild(groceryListTitle);
 
-         // create date Holder
-         const date = createDivElement();
-         date.className = ("date");
-         date.innerText = addEveryWeekDay()[l];
-         groceryListBody.appendChild(date);
-         ingredientsLoop(groceryListBody, data);
+        // // create date Holder
+        // const date = createDivElement();
+        // date.className = ("date");
+        // date.innerText = addEveryWeekDay()[7];
+        // console.log(date);
+        // groceryListBody.appendChild(date);
+        ingredientsLoop(groceryListBody, data);
     }
 }
 
 
- export default groceryListLoop;
+export default groceryListLoop;

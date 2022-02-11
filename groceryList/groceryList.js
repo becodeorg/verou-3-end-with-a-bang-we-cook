@@ -17,34 +17,16 @@ let foodFetch = async () => {
 }
 foodFetch();
 
-
-
-
-
-const createDivElement = () => {
-    const newDiv = document.createElement("div");
+const createH2Element = () => {
+    const newDiv = document.createElement("h2");
     return newDiv;
 }
 
 const main = document.querySelector("main");
-const pageTitle = createDivElement();
+const pageTitle = createH2Element();
 pageTitle.className = "pageTitle";
-pageTitle.innerHTML = "Shopping List";
+pageTitle.innerHTML = "Ingredient Lists";
 main.append(pageTitle);
-
-const listButton = document.createElement("button");
-listButton.id = "bigListButton";
-listButton.innerHTML = "Get The Whole List"
-pageTitle.appendChild(listButton);
-
-
-
-
-listButton.addEventListener("click", function () {
-    const change = document.getElementsByClassName("bigListBody").style.display = "block"; // wont apply
-    change();
-});
-
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */

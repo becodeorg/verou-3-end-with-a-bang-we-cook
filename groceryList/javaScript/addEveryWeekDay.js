@@ -10,9 +10,6 @@ const addEveryWeekDay = () => {
     let everyDay = [];
     for (let i = 0; i < 7; i++) {
         let day = new Date().getDay();
-        console.log({day});
-        console.log({i});
-        console.log(weekDay[(day + i) % 7]);
         everyDay.push(weekDay[(day + i) % 7]);
     }
     return everyDay;
