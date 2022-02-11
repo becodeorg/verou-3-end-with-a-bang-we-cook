@@ -1,17 +1,22 @@
-import bigList from "./javaScript/bigList.js"
 import groceryListLoop from "./javaScript/groceryList.js"
+import addEveryWeekDay from "./javaScript/addEveryWeekDay.js";
+addEveryWeekDay();
 
-let values=JSON.parse(localStorage.getItem("chosenRecipe"));
-for (let a = 0; a < values.length; a++){
-fetch(values[a]) // 
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        groceryListLoop(data); // date Problems
-    
-    });
+let foodFetch = async () => {
+    let values = JSON.parse(localStorage.getItem("chosenRecipe"));
+    for (let a = 0; a < values.length; a++) {
+        await fetch('https://api.edamam.com/api/recipes/v2/' + values[a] + '?type=public&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b') // 
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                groceryListLoop(data); // date Problems
+
+
+            });
+    }
 }
-// bigList(data); // can not put in fetch.... must be single list
+foodFetch();
+
 
 
 
@@ -58,7 +63,7 @@ window.onclick = function (event) {
             }
         }
     }
-dDown();
+    dDown();
 
     console.log("Push the Button");
 }
