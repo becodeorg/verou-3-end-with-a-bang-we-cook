@@ -32,8 +32,11 @@ const makeCard = (onePerson, i) => {
             <img src="${onePerson.profilePic}" alt="">
         </section>
         <section class="card-text">
-            <h2 class="">${onePerson.name}</h2>
-            <h3>${onePerson.location}</h3>
+            <section class="card-title">
+                <h2 class="">${onePerson.name}</h2>
+                <h3>${onePerson.location}</h3>
+            </section>
+            
             <p>${onePerson.lorem}</p>
             <span>${onePerson.rating} stars</span>
         </section>

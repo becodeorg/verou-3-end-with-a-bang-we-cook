@@ -59,12 +59,46 @@ button:hover{
 .tesimony-container{
     margin: auto;
     display: grid;
+    gap: 20px;
+    max-width: 70%;
+    margin-top: 50px;
 
 }
 .tesimony-intro{
-    text-align: center;
+    padding: 40px 0;
 }
 
+.card-container{
+
+}
+
+.card-img > img{
+    display: flex;
+    margin: auto;
+    position: relative;
+    border-radius: 50%;
+    border: 5px solid var(--color-neutral);
+    top: 60px;
+    max-width: 150px;
+}
+
+.card-text{
+    background-color: var(--color-light);
+    width: 30ch;
+    padding: 70px 50px 15px 50px;
+    border-radius: 30px;
+}
+.card-title{
+    text-align: center;
+    padding: 20px 0;
+}
+
+.card-text > span {
+    font-weight: 500;
+    padding: 20px;
+    display: flex;
+    justify-content: center
+}
 @media only screen and (max-width: 749px){
     img {
     max-width: 70%;
