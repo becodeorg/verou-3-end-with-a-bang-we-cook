@@ -174,7 +174,7 @@
   /* Links inside the dropdown */
   .dropdown-content a {
     color: #D35A2A;
-    padding: 10px 10px;
+    padding: 10px 5px;
     text-decoration: none;
     display: block;
   }
