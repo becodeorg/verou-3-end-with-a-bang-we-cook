@@ -23,7 +23,7 @@ const mainElement = document.querySelector("main");
 let bigList = (data) => {
 
     const bigListBody = createDivElement();
-    bigListBody.id = ("bigListBody");
+    bigListBody.className = ("bigListBody");
     mainElement.appendChild(bigListBody);
 
     const bigListTitle = createH3Element();
@@ -31,31 +31,31 @@ let bigList = (data) => {
     bigListTitle.innerHTML = ("Big Shopping List");
     bigListBody.appendChild(bigListTitle);
 
-    for (let i = 0; i < data.hits[0].recipe.ingredients.length; i++) {
-
-        const bigListIngredientsHolder = createUlElement();
+    const bigListIngredientsHolder = createUlElement();
         bigListIngredientsHolder.className = ("bigListIngredientsHolder");
         bigListBody.appendChild(bigListIngredientsHolder);
 
+    for (let i = 0; i < data.recipe.ingredients.length; i++) {
         // create checkBox
         const checkBox = checkBoxElement();
         checkBox.className = ("checkBox")
         bigListIngredientsHolder.append(checkBox);
 
         let amount = createLiElement();
-        amount.innerHTML = data.hits[0].recipe.ingredients[i].quantity.toPrecision(2);
+        amount.innerHTML = data.recipe.ingredients[i].quantity.toPrecision(2);
         bigListIngredientsHolder.appendChild(amount);
 
         let measure = createLiElement();
-        measure.innerHTML = data.hits[0].recipe.ingredients[i].measure;
+        measure.innerHTML = data.recipe.ingredients[i].measure;
         bigListIngredientsHolder.appendChild(measure);
 
         //create ingredientsParagraph
         let ingredientsLi = createLiElement();
         ingredientsLi.className = "ingredientsLi";
-        ingredientsLi.innerHTML = data.hits[i].recipe.ingredients[i].food;
+        ingredientsLi.innerHTML = data.recipe.ingredients[i].food;
         bigListIngredientsHolder.appendChild(ingredientsLi);
     }
+    
     const email = createDivElement();
     email.className = "email";
     bigListBody.appendChild(email);
