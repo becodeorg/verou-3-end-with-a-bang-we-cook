@@ -15,12 +15,12 @@ import {
     checkBoxElement
 } from "./createElements.js";
 
-// ingredients element LOOP
+
 let ingredientsLoop = (groceryListBody, data) => {
-    // create a loop for ingredients
+
     for (let i = 0; i < data.recipe.ingredients.length; i++) {
 
-        // create ingredientsHolder
+      
         const ingredientsHolder = createUlElement();
         ingredientsHolder.className = ("ingredientsHolder");
         groceryListBody.appendChild(ingredientsHolder);
