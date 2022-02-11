@@ -5,11 +5,11 @@ addEveryWeekDay();
 let foodFetch = async () => {
     let values = JSON.parse(localStorage.getItem("chosenRecipe"));
     for (let a = 0; a < values.length; a++) {
-        await fetch('https://api.edamam.com/api/recipes/v2/' + values[a] + '?type=public&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b') // 
+        await fetch('https://api.edamam.com/api/recipes/v2/' + values[a] + '?type=public&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')  
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                groceryListLoop(data,a); // date Problems
+                groceryListLoop(data,a); 
 
 
             });
@@ -36,12 +36,11 @@ pageTitle.className = "pageTitle";
 pageTitle.innerHTML = "Ingredient Lists";
 pageTitleDiv.append(pageTitle);
 
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
+
 function dDown() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-// Close the dropdown menu if the user clicks outside of it
+
 window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {
         let dropdowns = document.getElementsByClassName("dropdown-content");
@@ -55,5 +54,4 @@ window.onclick = function (event) {
     }
     dDown();
 
-    console.log("Push the Button");
 }
