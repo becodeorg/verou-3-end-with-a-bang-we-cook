@@ -5,7 +5,7 @@ const fetchRecipes=async(query)=>{
         .then(data => {
           console.log("oude data");
             console.log(data);
-            addDataToCards(data);
+            await addDataToCards(data);
     });
 }
 const fetchRecipe=async(recipe,index)=>{
@@ -33,8 +33,7 @@ const addDataToSelectedCards=async(data,index)=>{
    document.getElementsByClassName("image")[index].children[0].src=data.recipe.image;
    document.getElementsByClassName("title")[index].children[0].innerText=data.recipe.label;      
    document.querySelectorAll(".plusImage")[index].setAttribute("attribute",recepiId);
-   document.querySelectorAll(".plusImage")[index].src = "checkmark.png"; 
-
+   document.querySelectorAll(".plusImage")[index].src = "checkmark.png";
 }
 
 const addDataToCards=async(data)=>{
