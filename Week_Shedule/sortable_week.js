@@ -58,37 +58,53 @@ items.forEach(function (item) {
 
 
 //weekshedule 
-const createDayElements=()=>{
-  const days=document.getElementById("weekDays");
-  const d = new Date();
-  let day = d.getDay();
+const createDayElements=(i,selectedImages,selectedTitles,selectedUrls)=>{
+    
+  const newCard = document.createElement("div");
+  newCard.className = "weekDay"; //Create a card
   
-  for(let i=0;i<7;i++){
-    const newDiv=document.createElement("div");
-    newDiv.className="weekDay";
-    newDiv.innerText=newDay(day);
-    if(day==6){
-      day=0;
-    }else {day=day+1;}
-    days.appendChild(newDiv);
-  }
+  
+  const newDayTitle = document.createElement("h3"); //Create a Day
+  newDayTitle.textContent = newDay(i);
+  newCard.appendChild(newDayTitle); //add the title to the card
+
+  const newCardElement = document.createElement("div");
+  newCardElement.className = "day"; //Create a card
+  newCardElement.draggable="true";
+  newCard.appendChild(newCardElement);
+
+  const newImage = document.createElement("img"); //Create a Image
+  newImage.src = selectedImages[i]; //asign a value to the Image
+  newImage.className="image";
+  newCardElement.appendChild(newImage); //add the Image to the card
+
+  const newTitle = document.createElement("p"); //Create a Title
+  newTitle.textContent = selectedTitles[i];
+  newCardElement.appendChild(newTitle); //add the title to the card
+
+  const newButton = document.createElement("button"); //Create a Paragraph for the score
+  newButton.innerHTML ="<a href='"+selectedUrls[i]+"'target='_blank' alt='Broken Link'>view recipe</a>"
+  newCardElement.appendChild(newButton); //add the Paragraph to the designerdiv
+
+  document.getElementById("week").appendChild(newCard);
 }
-const newDay=(currentDay)=>{
+const newDay=(i)=>{
+  let d=new Date;
+  let currentDay=d.getDay();
   let weekDays=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-  return weekDays[currentDay];
+  return weekDays[(currentDay+i)%7];
 }
 
-createDayElements();
+
 
 
 //send all info to the groceries
 const addDataToCards=()=>{
   const selectedImages=JSON.parse(localStorage.getItem("chosenImage"));
   const selectedTitles=JSON.parse(localStorage.getItem("chosenTitle"));
-  
+  const selectedUrls=JSON.parse(localStorage.getItem("url"));
   for(let i=0;i<selectedImages.length;i++){
-    document.getElementsByClassName("image")[i].src=selectedImages[i];
-    document.getElementsByClassName("title")[i].innerText=selectedTitles[i];
+    createDayElements(i,selectedImages,selectedTitles,selectedUrls);
   }
 }
 

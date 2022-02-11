@@ -23,11 +23,11 @@ h3{
   margin:20px;
 }
 .day{
-    border: 3px solid var(--color-dark);
+    border: 1px solid var(--color-dark);
     background-color: #ddd;
-    border-radius: .5em;
     padding: 10px;
     cursor: pointer;
+    
 }
 .weekDay{
   border: 3px solid var(--color-dark);
@@ -38,7 +38,7 @@ h3{
 
 .week{
   display: grid;
-  grid-template-columns:repeat(7, 1fr);
+  grid-template-columns: repeat(auto-fill, 220px);
   gap: 10px;
 }
 
@@ -50,14 +50,21 @@ button{
   overflow: hidden;
   background-color: var(--color-light);
   padding: 10px 20px;
+  margin: 20px;
+  margin-left:auto;
+  margin-right: auto;
 }
 
 button:hover{
   color: var(--color-highlight);
   border: 1px solid var(--color-highlight);
-  
+  cursor: pointer;
 }
 .image{
   width: 10vw;
   user-select: none;
+}
+
+.buttonRecipe{
+  margin-bottom: 10px;
 }
