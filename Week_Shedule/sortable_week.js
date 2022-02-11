@@ -34,6 +34,8 @@ function handleDrop(e) {
   if (dragSrcEl != this) {
     // Set the source column's HTML to the HTML of the column we dropped on.
     dragSrcEl.innerHTML = this.innerHTML;
+    this.style.opacity = '1';
+    dragSrcEl.style.opacity='1';
     this.innerHTML = e.dataTransfer.getData('text/html');
     //TODO: write code to localstorage get and set the order of the array.
   }
@@ -86,7 +88,7 @@ const addDataToCards=()=>{
   
   for(let i=0;i<selectedImages.length;i++){
     document.getElementsByClassName("image")[i].src=selectedImages[i];
-    document.getElementsByClassName("title")[i].src=selectedTitles[i];
+    document.getElementsByClassName("title")[i].innerText=selectedTitles[i];
   }
 }
 
