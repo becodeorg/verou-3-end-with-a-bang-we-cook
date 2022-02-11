@@ -30,40 +30,6 @@
      margin-bottom: 1rem;
  }
 
- button#bigListButton{
-     width: 200px;
-     text-align: center;
-     margin-top: 1rem;
-     margin-left: 3.8rem;
- }
-
- .bigListButton {
-     margin-left: 0.5rem;
-     padding: 0.5rem;
- }
-
-
- .bigListBody{
-     display: none;
-     flex-direction: column;
-     justify-content: center;
-     width: 98%;
-     height: auto;
-     margin-left: 0.2rem;
-     margin-bottom: 1rem;
-     border-style: solid;
-     border-radius: 5px;
-     border-color: #D35A2A;
- }
-
-
-
- .bigListTitle {
-     margin-top: 1rem;
-     margin-bottom: 1rem;
-     text-align: center;
- }
-
  ul.bigListIngredientsHolder {
      display: flex;
      flex-direction: row;
@@ -92,9 +58,9 @@
      display: flex;
      flex-direction: column;
      justify-content: center;
-     width: 98%;
+     width: 94%;
      height: auto;
-     margin-left: 0.2rem;
+     margin-left: 0.6rem;
      margin-bottom: 1rem;
      border-style: solid;
      border-radius: 5px;
@@ -186,4 +152,10 @@
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;}
 
+@media only screen and (min-with: 426px) and (max-with: 768px) {
+    
+ button.dropbtn{
+     display: none;
+ }   
+}
  
