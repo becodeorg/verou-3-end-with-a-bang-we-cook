@@ -31,12 +31,11 @@ let bigList = (data) => {
     bigListTitle.innerHTML = ("Big Shopping List");
     bigListBody.appendChild(bigListTitle);
 
-    for (let i = 0; i < data.recipe.ingredients.length; i++) {
-
-        const bigListIngredientsHolder = createUlElement();
+    const bigListIngredientsHolder = createUlElement();
         bigListIngredientsHolder.className = ("bigListIngredientsHolder");
         bigListBody.appendChild(bigListIngredientsHolder);
 
+    for (let i = 0; i < data.recipe.ingredients.length; i++) {
         // create checkBox
         const checkBox = checkBoxElement();
         checkBox.className = ("checkBox")
@@ -56,6 +55,7 @@ let bigList = (data) => {
         ingredientsLi.innerHTML = data.recipe.ingredients[i].food;
         bigListIngredientsHolder.appendChild(ingredientsLi);
     }
+    
     const email = createDivElement();
     email.className = "email";
     bigListBody.appendChild(email);

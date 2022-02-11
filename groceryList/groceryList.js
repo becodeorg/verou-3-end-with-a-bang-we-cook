@@ -3,19 +3,19 @@ import groceryListLoop from "./javaScript/groceryList.js"
 
 let values=JSON.parse(localStorage.getItem("chosenRecipe"));
 for (let a = 0; a < values.length; a++){
-fetch(values[a])
+fetch(values[a]) // 
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        bigList(data);
-        groceryListLoop(data);
+        groceryListLoop(data); // date Problems
+    
     });
 }
-   
-//  What should i do for the groceryList
+// bigList(data); // can not put in fetch.... must be one list
 
-// TODO events on Card in random Card Pick 
-// TODO Look in Variables for links
+
+
+
 const createDivElement = () => {
     const newDiv = document.createElement("div");
     return newDiv;
@@ -36,7 +36,8 @@ pageTitle.appendChild(listButton);
 
 
 listButton.addEventListener("click", function () {
-    const change = document.getElementsByClassName("bigListBody").style.display = "flex";
+    const change = document.getElementsByClassName("bigListBody").style.display = "block"; // wont apply
+    change();
 });
 
 
@@ -59,8 +60,5 @@ window.onclick = function (event) {
     }
 dDown();
 
-
-    // TODO create Input Customer
-    // TODO groceryList Mail option?
     console.log("Push the Button");
 }
