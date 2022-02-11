@@ -65,12 +65,14 @@ body {
 }
 
 .cardcontent-container {
-    padding: 20px;
+    height: 40px;
+    padding: 15px;
     display: flex;
     justify-content: center;
 }
 
 .buttons {
+    height: 30px;
     display: flex;
     align-items: center;
     margin-right: 20px;
