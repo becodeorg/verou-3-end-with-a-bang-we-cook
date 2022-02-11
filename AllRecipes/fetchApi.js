@@ -28,8 +28,13 @@ const addDataToCards=async(data)=>{
   
   let alreadySelected=JSON.parse(localStorage.getItem("chosenRecipe"));
   if(alreadySelected==null){
-    alreadySelected=JSON.parse(JSON.stringify([]));
-  } 
+    for(let i=0;i<19;i++)//add data to all the cards if their is no selected
+   {  document.getElementsByClassName("image")[i].children[0].src=data.hits[i].recipe.image;
+      document.getElementsByClassName("title")[i].children[0].innerText=data.hits[i].recipe.label;      
+      document.querySelectorAll(".plusImage")[i].setAttribute("attribute",data.hits[i]._links.self.href);
+      document.querySelectorAll(".plusImage")[i].src = "plusmark.png";
+    }
+  }else{ 
    for(let i=0;i<alreadySelected.length;i++){
     await fetchRecipe(alreadySelected[i],i);//add data to already selected cards    
    }
@@ -39,6 +44,7 @@ const addDataToCards=async(data)=>{
       document.querySelectorAll(".plusImage")[i].setAttribute("attribute",data.hits[i]._links.self.href);
       document.querySelectorAll(".plusImage")[i].src = "plusmark.png";
     }
+  }
 }
 
 export const Search=async ()=>{
