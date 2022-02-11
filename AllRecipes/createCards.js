@@ -16,6 +16,11 @@ const changeButtonImage = (index) => {
             valuesRecipe.push(newValueRecipe);
             localStorage.setItem("chosenRecipe",JSON.stringify(valuesRecipe));
 
+            let valuesUrl=JSON.parse(localStorage.getItem("url"));
+            let newValueUrl=selectedElement.getAttribute("url");
+            valuesUrl.push(newValueUrl);
+            localStorage.setItem("url",JSON.stringify(valuesUrl));
+
             let valuesImage=JSON.parse(localStorage.getItem("chosenImage"));
             let newValueImage=selectedElement.getAttribute("img");
             valuesImage.push(newValueImage);
@@ -39,6 +44,10 @@ const changeButtonImage = (index) => {
                 selectedElement.getAttribute("title")
              ];            
              localStorage.setItem("chosenTitle",JSON.stringify(startValueTitle));
+             const startValueUrl=[
+                selectedElement.getAttribute("url")
+             ];            
+             localStorage.setItem("url",JSON.stringify(startValueUrl));
         }
         selectedElement.src = "checkmark.png";
     }
@@ -69,6 +78,15 @@ const changeButtonImage = (index) => {
                 //console.log("een localstorag item zou moeten verwijderen?")
                 values.splice(i,1);
                 localStorage.setItem("chosenTitle",JSON.stringify(values))
+            }
+        }
+        values=JSON.parse(localStorage.getItem("url"));
+        //console.log(values);
+        for(let i=0;i<values.length;i++){
+            if(values[i]==selectedElement.getAttribute("url")){
+                //console.log("een localstorag item zou moeten verwijderen?")
+                values.splice(i,1);
+                localStorage.setItem("url",JSON.stringify(values))
             }
         }
     }

@@ -12,34 +12,25 @@ const fetchRecipes=async(query)=>{
     });
 }
 
-const fetchRecipe=async(recipe,index)=>{
-  await fetch('https://api.edamam.com/api/recipes/v2/'+recipe+'?type=public&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
-  .then(response => response.json())
-  .then(async data => {
-    //  console.log("nieuwe data")
-    //  console.log(data);
-     await addDataToSelectedCards(data,index);
-});
-}
-const getRecipeId=(data)=>{
-  let myArray = data.recipe.uri.split("_");
-  return myArray[1];
-}
 const getRecipesId=(data,i)=>{
   let myArray = data.hits[i].recipe.uri.split("_");
   return myArray[1];
 }
 
-const addDataToSelectedCards=async(data,index)=>{
+const addDataToSelectedCards=async(index)=>{
   
-  const recepiId=getRecipeId(data);
-   document.getElementsByClassName("image")[index].children[0].src=data.recipe.image;
-   document.getElementsByClassName("title")[index].children[0].innerText=data.recipe.label;      
-   document.querySelectorAll(".plusImage")[index].setAttribute("id",recepiId);
-   document.querySelectorAll(".plusImage")[index].setAttribute("img",data.recipe.image);
-   document.querySelectorAll(".plusImage")[index].setAttribute("title",data.recipe.label);
+  const recepiId=JSON.parse(localStorage.getItem("chosenRecipe"));
+  const recepiImage=JSON.parse(localStorage.getItem("chosenImage"));
+  const recepiTitle=JSON.parse(localStorage.getItem("chosenTitle"));
+  const recepiUrl=JSON.parse(localStorage.getItem("url"));
+   document.getElementsByClassName("image")[index].children[0].src=recepiImage[index];
+   document.getElementsByClassName("title")[index].children[0].innerText=recepiTitle[index];      
+   document.querySelectorAll(".plusImage")[index].setAttribute("id",recepiId[index]);
+   document.querySelectorAll(".plusImage")[index].setAttribute("img",recepiImage[index]);
+   document.querySelectorAll(".plusImage")[index].setAttribute("title",recepiTitle[index]);
+   document.querySelectorAll(".plusImage")[index].setAttribute("url",recepiUrl[index]);
    document.querySelectorAll(".plusImage")[index].src = "checkmark.png";
-   document.getElementsByClassName("buttonRecipe")[index].innerHTML="<a href='"+data.recipe.url+"'target='_blank' alt='Broken Link'>view recipe</a>"
+   document.getElementsByClassName("buttonRecipe")[index].innerHTML="<a href='"+recepiUrl[index]+"'target='_blank' alt='Broken Link'>view recipe</a>"
 }
 
 const addDataToCards=async(data)=>{
@@ -53,12 +44,13 @@ const addDataToCards=async(data)=>{
       document.querySelectorAll(".plusImage")[i].setAttribute("id",recepisId);
       document.querySelectorAll(".plusImage")[i].setAttribute("img",data.hits[i].recipe.image);
       document.querySelectorAll(".plusImage")[i].setAttribute("title",data.hits[i].recipe.label);
+      document.querySelectorAll(".plusImage")[i].setAttribute("url",data.hits[i].recipe.url);
       document.querySelectorAll(".plusImage")[i].src = "plusmark.png";
       document.getElementsByClassName("buttonRecipe")[i].innerHTML="<a href='"+data.hits[i].recipe.url+"' alt='Broken Link' target='_blank'>view recipe</a>"
     }
   }else{ 
    for(let i=0;i<alreadySelected.length;i++){
-    await fetchRecipe(alreadySelected[i],i);//add data to already selected cards    
+    addDataToSelectedCards(i);//add data to already selected cards    
    }
    for(let i=alreadySelected.length;i<20;i++)//add data to rest of cards
    { let recepisId=getRecipesId(data,i); 
@@ -67,6 +59,7 @@ const addDataToCards=async(data)=>{
       document.querySelectorAll(".plusImage")[i].setAttribute("id",recepisId);
       document.querySelectorAll(".plusImage")[i].setAttribute("img",data.hits[i].recipe.image);
       document.querySelectorAll(".plusImage")[i].setAttribute("title",data.hits[i].recipe.label);
+      document.querySelectorAll(".plusImage")[i].setAttribute("url",data.hits[i].recipe.url);
       document.querySelectorAll(".plusImage")[i].src = "plusmark.png";
       document.getElementsByClassName("buttonRecipe")[i].innerHTML="<a href='"+data.hits[i].recipe.url+"' alt='Broken Link' target='_blank'>view recipe</a>"
     }
