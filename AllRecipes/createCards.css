@@ -140,4 +140,11 @@ body {
     padding: 5px;
 }
 
+.footer {
+    height: 80px;
+}
 
+.footerImage {
+    padding: 14px;
+    height: 50px;
+}
