@@ -52,8 +52,14 @@ nav {
     color: var(--color-highlight);
 }
 
+.team{
+    padding: 14px;
+}
+
 .footer {
     height: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .footerImage {
