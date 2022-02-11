@@ -31,9 +31,9 @@ const changeButtonImage = (index) => {
         console.log(values);
         for(let i=0;i<values.length;i++){
             if(values[i]==selectedElement.getAttribute("attribute")){
-                console.log("zou moeten verwijderen?")
-                // values.splice(i,1);
-                // localStorage.setItem("chosenRecipe",JSON.stringify(values))
+                console.log("een localstorag item zou moeten verwijderen?")
+                values.splice(i,1);
+                localStorage.setItem("chosenRecipe",JSON.stringify(values))
             }
         }
     }
