@@ -6,7 +6,7 @@ fetch("https://testimonialapi.toolcarton.com/api")
 
 const getfirst3 = (result) => {
     let allData = result
-     for (let i = 0; i < allData.length; i++) {
+     for (let i = 0; i < 8; i++) {
         const people = allData[i];
         compileData(people, i)
     }

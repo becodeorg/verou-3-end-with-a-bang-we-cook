@@ -23,6 +23,9 @@ span{
     position: relative;
 }
 
+.steps_container{
+    margin: 70px 0 30px 0;
+}
 .steps-h2{
     font-size: larger;
     padding-top: 100px;
@@ -41,6 +44,7 @@ span{
 /* button styling */
 /*              */
 button{
+    
     margin: auto;
     display: flex;
     border: 1px solid var(--color-dark);
@@ -56,58 +60,56 @@ button:hover{
     
 }
 
-.tesimony-container{
-    margin: auto;
-    display: grid;
-    gap: 20px;
-    max-width: 70%;
-    margin-top: 50px;
-
-}
-.tesimony-intro{
-    padding: 40px 0;
-}
-
-.card-container{
-
-}
-
 .card-img > img{
-    display: flex;
-    margin: auto;
-    position: relative;
     border-radius: 50%;
     border: 5px solid var(--color-neutral);
-    top: 60px;
-    max-width: 150px;
 }
 
 .card-text{
     background-color: var(--color-light);
-    width: 30ch;
-    padding: 70px 50px 15px 50px;
     border-radius: 30px;
 }
-.card-title{
+
+.tesimony-intro{
+    margin-top: 60px;
+    font-size: 20px;
     text-align: center;
-    padding: 20px 0;
 }
 
-.card-text > span {
-    font-weight: 500;
-    padding: 20px;
-    display: flex;
-    justify-content: center
-}
 @media only screen and (max-width: 749px){
     img {
-    max-width: 70%;
-}
+    max-width: 70%; 
+    }
+    .tesimony-container {
+        max-width: 90%;
+        margin: auto;
+    }
+    .card-container{
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        margin: 15px 0;
+        
+    }
+    .tesimony-intro{
+        padding: 80px 0 20px 0;
+        text-align: center;
+    }
+    .card-text{
+        background-color: var(--color-light);
+        padding: 20px 20px 20px 50px;
+    }
+    .card-img > img{
+        display: flex;
+        margin: auto;
+        position: relative;
+        align-items: center;
+        min-width: 100px;
+        top: 25px;
+    }
 }
 
 @media only screen and (min-width: 750px){
     .steps {
-        
         max-width: 70%;
         display: flex;
     }
@@ -117,5 +119,43 @@ button:hover{
 
     .introduction{
         grid-template-columns: 400px 45ch;
+    }
+    .tesimony-container{
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 80%;
+        
+    }
+    
+    .tesimony-intro{
+        padding: 40px 0;
+    }
+    
+    .card-img > img{
+        display: flex;
+        margin: auto;
+        position: relative;
+        top: 60px;
+        max-width: 150px;
+    }
+    
+    .card-text{
+        max-width: 30ch;
+        padding: 60px 50px 15px 50px;
+
+    }
+
+    .card-title{
+        text-align: center;
+        padding: 20px 0;
+    }
+    
+    .card-text > span {
+        font-weight: 500;
+        padding: 20px;
+        display: flex;
+        justify-content: center
     }
 }

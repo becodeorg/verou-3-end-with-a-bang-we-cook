@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>We Cook Grocery List</title>
+    <meta property="og:title" content="We Cook">
+    <meta property="og:description" content="Your ingredients for the whole week.">
 
     <script type="module" src="groceryList.js" defer></script>
     <!--Favicon-->
-    <link rel="icon" type="image/x-icon" href="#">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://use.typekit.net/grq4uwx.css">
     <link rel="stylesheet" href="groceryList.css">
     <link rel="stylesheet" href="../style.css">
@@ -25,6 +27,11 @@
                 <p class="logo-p">Making it easy to choose</p>
             </a>
         </section>
+        <section class="nav-items">
+            <a href="../AllRecipes/createCards.html">Recipes</a>
+            <a href="../Week_Shedule/index.html">Weekly planning</a>
+            <a href="./groceryList.html">Shopping list</a>
+        </section>
         <div class="dropdown">
             <button onclick="dDown()" class="dropbtn">MENU</button>
             <div id="myDropdown" class="dropdown-content">
@@ -38,6 +45,18 @@
     <main>
     </main>
     <!--Base line for groceryList build ?-->
+    <div class="footerDiv">
+        <footer class="footer">
+            <div class="team">
+                <p>&#169; Team WE COOK</p>
+                <p>Project for BeCode Full Stack Web Development</p>
+                <p>By Ellen,Pieter,Sara and Colin</p>
+            </div>
+            <div class="edamam">
+                <img src="../image/Edamam_Badge.svg" class="footerImage">
+            </div>
+        </footer>
+    </div>
 
 </body>
 
