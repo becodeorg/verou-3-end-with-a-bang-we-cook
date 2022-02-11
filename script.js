@@ -1,4 +1,4 @@
-fetch("http://testimonialapi.toolcarton.com/api")
+fetch("https://testimonialapi.toolcarton.com/api")
 .then(response => response.json())
 .then(result => {
    getfirst3(result)  
@@ -28,14 +28,14 @@ const makeCard = (onePerson, i) => {
     const container = document.getElementById('section');
     const content = `   
     <section class="card-container ${'person' +onePerson.id}">
+        <section class="card-img">
+            <img src="${onePerson.profilePic}" alt="">
+        </section>
         <section class="card-text">
             <h2 class="">${onePerson.name}</h2>
             <h3>${onePerson.location}</h3>
             <p>${onePerson.lorem}</p>
-            <span>${onePerson.rating}</span>
-        </section>
-        <section class="card-img">
-            <img src="${onePerson.profilePic}" alt="">
+            <span>${onePerson.rating} stars</span>
         </section>
 
     </section>

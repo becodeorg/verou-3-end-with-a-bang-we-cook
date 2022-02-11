@@ -5,15 +5,30 @@
     --color-light: #FCFCFC;
 }
 main{
+    max-width: 100vw;
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 
-hr{
-    max-width: 70%;
-    margin: auto;
+span{
+    color: var(--color-highlight);
 }
+
+.intro-img{
+    background-image: url("/home_img/computer.jpeg");
+    min-height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.steps-h2{
+    font-size: larger;
+    padding-top: 100px;
+    text-align: center;
+}
+
 .step {
     text-align: center;
     padding: 20px;
@@ -21,7 +36,6 @@ hr{
 
 .steps {
     margin: 30px auto;
-
 }
 
 /* button styling */
@@ -42,7 +56,14 @@ button:hover{
     
 }
 
+.tesimony-container{
+    margin: auto;
+    display: grid;
 
+}
+.tesimony-intro{
+    text-align: center;
+}
 
 @media only screen and (max-width: 749px){
     img {
@@ -58,5 +79,9 @@ button:hover{
     }
     img {
         max-width: 100%;
+    }
+
+    .introduction{
+        grid-template-columns: 400px 45ch;
     }
 }
