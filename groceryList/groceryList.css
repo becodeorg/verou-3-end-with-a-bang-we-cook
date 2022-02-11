@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 @media only screen and (max-width: 426px) {
     :root {
         --color-dark: #2E1A1E;
@@ -11,20 +12,21 @@
         --font-logo: mixta-pro, serif;
         --font-text: new-order, sans-serif;
     }
-    
-    
+
     body {
         background-color: let(--color-neutral);
     }
-    
+
     main {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    .nav-items{
+
+    .nav-items {
         display: none;
     }
+
     .pageTitle {
         display: flex;
         flex-direction: column;
@@ -32,14 +34,14 @@
         margin-top: 1.5rem;
         margin-bottom: 1rem;
     }
-    
+
     ul.bigListIngredientsHolder {
         display: flex;
         flex-direction: row;
         margin: 0.5rem;
         list-style-type: none;
     }
-    
+
     .email {
         margin-left: 4.5rem;
         margin-top: 1rem;
@@ -48,7 +50,7 @@
         text-align: center;
         width: 100px;
     }
-    
+
     .eMailButton {
         width: 71px;
         display: flex;
@@ -56,7 +58,7 @@
         padding: 0.5rem;
         margin-top: 0.5rem
     }
-    
+
     .groceryListBody {
         display: flex;
         flex-direction: column;
@@ -69,47 +71,45 @@
         border-radius: 5px;
         border-color: #D35A2A;
     }
-    
+
     h3 {
         margin-top: 1rem;
         margin-bottom: 1rem;
         text-align: center;
     }
-    
+
     input.checkBox {
         margin-right: 0.7rem;
         background-color: #D35A2A;
     }
-    
+
     .date {
         text-align: center;
         text-decoration: underline;
         margin: 1rem;
     }
-    
+
     .ingredientsHolder {
         width: 97%;
         height: auto;
     }
-    
+
     ul {
         display: flex;
         margin: 0.5rem;
         list-style-type: none;
         text-align: start;
     }
-    
+
     li {
         text-align: left;
         margin-right: 1rem;
     }
-    
+
     .ingredientsLi {
         margin-left: 0.5rem;
     }
-    
-    
-    
+
     /* Dropdown Button */
     .dropbtn {
         background-color: #EBEBEB;
@@ -120,19 +120,19 @@
         border-radius: 10px;
         cursor: pointer;
     }
-    
+
     /* Dropdown button on hover & focus */
     .dropbtn:hover,
     .dropbtn:focus {
         background-color: #EBEBEB;
     }
-    
+
     /* The container <div> - needed to position the dropdown content */
     .dropdown {
         position: relative;
         display: inline-block;
     }
-    
+
     /* Dropdown Content (Hidden by Default) */
     .dropdown-content {
         display: none;
@@ -144,7 +144,7 @@
         border: 1px solid #D35A2A;
         border-radius: 10px;
     }
-    
+
     /* Links inside the dropdown */
     .dropdown-content a {
         color: #D35A2A;
@@ -152,19 +152,18 @@
         text-decoration: none;
         display: block;
     }
-    
+
     /* Change color of dropdown links on hover */
     .dropdown-content a:hover {
         background-color: #EBEBEB
     }
-    
+
     /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
     .show {
         display: block;
-    }  
-    
-   
+    }
 }
+
 @media only screen and (min-width: 427px) and (max-width: 832px) {
     :root {
         --color-dark: #2E1A1E;
@@ -173,21 +172,23 @@
         --font-logo: mixta-pro, serif;
         --font-text: new-order, sans-serif;
     }
-    
-    
+
+
     body {
         background-color: let(--color-neutral);
     }
-    
+
     main {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
-    .nav-items{
+
+    .nav-items {
         display: none;
     }
+
     .pageTitleHolder {
         display: flex;
         flex-direction: column;
@@ -197,14 +198,14 @@
         margin-top: 1.5rem;
         margin-bottom: 1rem;
     }
-    
+
     ul.bigListIngredientsHolder {
         display: flex;
         flex-direction: row;
         margin: 0.5rem;
         list-style-type: none;
     }
-    
+
     .email {
         margin-left: 4.5rem;
         margin-top: 1rem;
@@ -213,7 +214,7 @@
         text-align: center;
         width: 100px;
     }
-    
+
     .eMailButton {
         width: 71px;
         display: flex;
@@ -221,7 +222,7 @@
         padding: 0.5rem;
         margin-top: 0.5rem
     }
-    
+
     .groceryListBody {
         display: flex;
         flex-direction: column;
@@ -234,45 +235,45 @@
         border-radius: 5px;
         border-color: #D35A2A;
     }
-    
+
     h3 {
         margin-top: 1rem;
         margin-bottom: 1rem;
         text-align: center;
     }
-    
+
     input.checkBox {
         margin-right: 0.7rem;
         background-color: #D35A2A;
     }
-    
+
     .date {
         text-align: center;
         text-decoration: underline;
         margin: 1rem;
     }
-    
+
     .ingredientsHolder {
         width: 97%;
         height: auto;
     }
-    
+
     ul {
         display: flex;
         margin: 0.5rem;
         list-style-type: none;
         text-align: start;
     }
-    
+
     li {
         text-align: left;
         margin-right: 1rem;
     }
-    
+
     .ingredientsLi {
         margin-left: 0.5rem;
-    }  
-    
+    }
+
     /* Dropdown Button */
     .dropbtn {
         background-color: #EBEBEB;
@@ -283,19 +284,19 @@
         border-radius: 10px;
         cursor: pointer;
     }
-    
+
     /* Dropdown button on hover & focus */
     .dropbtn:hover,
     .dropbtn:focus {
         background-color: #EBEBEB;
     }
-    
+
     /* The container <div> - needed to position the dropdown content */
     .dropdown {
         position: relative;
         display: inline-block;
     }
-    
+
     /* Dropdown Content (Hidden by Default) */
     .dropdown-content {
         display: none;
@@ -307,7 +308,7 @@
         border: 1px solid #D35A2A;
         border-radius: 10px;
     }
-    
+
     /* Links inside the dropdown */
     .dropdown-content a {
         color: #D35A2A;
@@ -315,17 +316,18 @@
         text-decoration: none;
         display: block;
     }
-    
+
     /* Change color of dropdown links on hover */
     .dropdown-content a:hover {
         background-color: #EBEBEB
     }
-    
+
     /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
     .show {
         display: block;
-    }  
+    }
 }
+
 @media only screen and (min-width: 833px) {
     :root {
         --color-dark: #2E1A1E;
@@ -334,19 +336,19 @@
         --font-logo: mixta-pro, serif;
         --font-text: new-order, sans-serif;
     }
-    
-    
+
+
     body {
         background-color: let(--color-neutral);
     }
-    
+
     main {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .pageTitleHolder {
         display: flex;
         flex-direction: column;
@@ -356,14 +358,14 @@
         margin-top: 1.5rem;
         margin-bottom: 1rem;
     }
-    
+
     ul.bigListIngredientsHolder {
         display: flex;
         flex-direction: row;
         margin: 0.5rem;
         list-style-type: none;
     }
-    
+
     .email {
         margin-left: 4.5rem;
         margin-top: 1rem;
@@ -372,7 +374,7 @@
         text-align: center;
         width: 100px;
     }
-    
+
     .eMailButton {
         width: 71px;
         display: flex;
@@ -380,7 +382,7 @@
         padding: 0.5rem;
         margin-top: 0.5rem
     }
-    
+
     .groceryListBody {
         display: flex;
         flex-direction: column;
@@ -393,45 +395,45 @@
         border-radius: 5px;
         border-color: #D35A2A;
     }
-    
+
     h3 {
         margin-top: 1rem;
         margin-bottom: 1rem;
         text-align: center;
     }
-    
+
     input.checkBox {
         margin-right: 0.7rem;
         background-color: #D35A2A;
     }
-    
+
     .date {
         text-align: center;
         text-decoration: underline;
         margin: 1rem;
     }
-    
+
     .ingredientsHolder {
         width: 97%;
         height: auto;
     }
-    
+
     ul {
         display: flex;
         margin: 0.5rem;
         list-style-type: none;
         text-align: start;
     }
-    
+
     li {
         text-align: left;
         margin-right: 1rem;
     }
-    
+
     .ingredientsLi {
         margin-left: 0.5rem;
-    }  
-    
+    }
+
     /* Dropdown Button */
     .dropbtn {
         background-color: #EBEBEB;
@@ -442,19 +444,19 @@
         border-radius: 10px;
         cursor: pointer;
     }
-    
+
     /* Dropdown button on hover & focus */
     .dropbtn:hover,
     .dropbtn:focus {
         background-color: #EBEBEB;
     }
-    
+
     /* The container <div> - needed to position the dropdown content */
     .dropdown {
         position: relative;
         display: none;
     }
-    
+
     /* Dropdown Content (Hidden by Default) */
     .dropdown-content {
         display: none;
@@ -466,7 +468,7 @@
         border: 1px solid black;
         border-radius: 10px;
     }
-    
+
     /* Links inside the dropdown */
     .dropdown-content a {
         color: #D35A2A;
@@ -474,14 +476,14 @@
         text-decoration: none;
         display: block;
     }
-    
+
     /* Change color of dropdown links on hover */
     .dropdown-content a:hover {
         background-color: #EBEBEB
     }
-    
+
     /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
     .show {
         display: block;
-    }  
+    }
 }
