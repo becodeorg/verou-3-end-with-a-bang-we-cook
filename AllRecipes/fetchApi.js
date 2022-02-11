@@ -1,25 +1,28 @@
+window.onload = function() {
+  Search();
+};
 
 const fetchRecipes=async(query)=>{
     await fetch('https://api.edamam.com/api/recipes/v2?type=public&q='+query+'&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
         .then(response => response.json())
         .then(data => {
-          console.log("oude data");
-            console.log(data);
+          // console.log("oude data");
+          //   console.log(data);
             addDataToCards(data);
     });
 }
+
 const fetchRecipe=async(recipe,index)=>{
   await fetch('https://api.edamam.com/api/recipes/v2/'+recipe+'?type=public&app_id=dc33d4d0&app_key=4ed7538e5048146690cf86e13c0f1d1b')
   .then(response => response.json())
-  .then(data => {
-     console.log("nieuwe data")
-     console.log(data);
-      addDataToSelectedCards(data,index);
+  .then(async data => {
+    //  console.log("nieuwe data")
+    //  console.log(data);
+     await addDataToSelectedCards(data,index);
 });
 }
 const getRecipeId=(data)=>{
   let myArray = data.recipe.uri.split("_");
-  console.log(myArray[1]);
   return myArray[1];
 }
 const getRecipesId=(data,i)=>{
@@ -28,12 +31,13 @@ const getRecipesId=(data,i)=>{
   return myArray[1];
 }
 const addDataToSelectedCards=async(data,index)=>{
-  //console.log(data);
+  
   const recepiId=getRecipeId(data);
    document.getElementsByClassName("image")[index].children[0].src=data.recipe.image;
    document.getElementsByClassName("title")[index].children[0].innerText=data.recipe.label;      
    document.querySelectorAll(".plusImage")[index].setAttribute("attribute",recepiId);
    document.querySelectorAll(".plusImage")[index].src = "checkmark.png";
+   document.getElementsByClassName("buttonRecipe")[index].innerHTML="<a href='"+data.recipe.url+"'target='_blank' alt='Broken Link'>view recipe</a>"
 }
 
 const addDataToCards=async(data)=>{
@@ -46,6 +50,7 @@ const addDataToCards=async(data)=>{
       document.getElementsByClassName("title")[i].children[0].innerText=data.hits[i].recipe.label;      
       document.querySelectorAll(".plusImage")[i].setAttribute("attribute",recepisId);
       document.querySelectorAll(".plusImage")[i].src = "plusmark.png";
+      document.getElementsByClassName("buttonRecipe")[i].innerHTML="<a href='"+data.hits[i].recipe.url+"' alt='Broken Link' target='_blank'>view recipe</a>"
     }
   }else{ 
    for(let i=0;i<alreadySelected.length;i++){
@@ -57,6 +62,7 @@ const addDataToCards=async(data)=>{
       document.getElementsByClassName("title")[i].children[0].innerText=data.hits[i].recipe.label;      
       document.querySelectorAll(".plusImage")[i].setAttribute("attribute",recepisId);
       document.querySelectorAll(".plusImage")[i].src = "plusmark.png";
+      document.getElementsByClassName("buttonRecipe")[i].innerHTML="<a href='"+data.hits[i].recipe.url+"' alt='Broken Link' target='_blank'>view recipe</a>"
     }
   }
 }
@@ -69,5 +75,3 @@ export const Search=async ()=>{
     await fetchRecipes(input.toLowerCase())
     }
 }
-
-Search();
