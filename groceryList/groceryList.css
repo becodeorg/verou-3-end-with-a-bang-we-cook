@@ -116,7 +116,7 @@
         color: #D35A2A;
         padding: 16px;
         font-size: 16px;
-        border: 1px solid black;
+        border: 1px solid #D35A2A;
         border-radius: 10px;
         cursor: pointer;
     }
@@ -141,7 +141,7 @@
         min-width: 120px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
-        border: 1px solid black;
+        border: 1px solid #D35A2A;
         border-radius: 10px;
     }
     
@@ -279,7 +279,7 @@
         color: #D35A2A;
         padding: 16px;
         font-size: 16px;
-        border: 1px solid black;
+        border: 1px solid #D35A2A;
         border-radius: 10px;
         cursor: pointer;
     }
@@ -304,7 +304,7 @@
         min-width: 120px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
-        border: 1px solid black;
+        border: 1px solid #D35A2A;
         border-radius: 10px;
     }
     
