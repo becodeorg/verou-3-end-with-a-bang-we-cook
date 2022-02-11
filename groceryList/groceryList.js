@@ -18,15 +18,23 @@ let foodFetch = async () => {
 foodFetch();
 
 const createH2Element = () => {
-    const newDiv = document.createElement("h2");
+    const newH2Div = document.createElement("h2");
+    return newH2Div;
+}
+
+const createDivElement = () => {
+    const newDiv = document.createElement("div");
     return newDiv;
 }
 
 const main = document.querySelector("main");
+const pageTitleDiv = createDivElement();
+pageTitleDiv.className = "pageTitleHolder";
+main.append(pageTitleDiv);
 const pageTitle = createH2Element();
 pageTitle.className = "pageTitle";
 pageTitle.innerHTML = "Ingredient Lists";
-main.append(pageTitle);
+pageTitleDiv.append(pageTitle);
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
