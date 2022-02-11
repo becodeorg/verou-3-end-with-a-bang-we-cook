@@ -10,13 +10,13 @@ const changeButtonImage = (index) => {
     if(selectedElement.src.includes("plusmark.png")){
 
         if(localStorage.getItem("chosenRecipe")){
-            console.log("local storage is true");
+           //puts new values in localstorage
             let values=JSON.parse(localStorage.getItem("chosenRecipe"));
             let newValue=selectedElement.getAttribute("attribute");
             values.push(newValue);
             localStorage.setItem("chosenRecipe",JSON.stringify(values));
         }else {
-            console.log("local storage is false")
+            //puts the first value in local storage
             const startValue=[
                selectedElement.getAttribute("attribute")
             ];
@@ -25,13 +25,15 @@ const changeButtonImage = (index) => {
         }
         selectedElement.src = "checkmark.png";
     }
-    else{
-        selectedElement.src = "plusmark.png";
+    else{//verwijderd value uit local storage+ plusmark ipv checkmark
+        selectedElement.src = "plusmark.png";        
         let values=JSON.parse(localStorage.getItem("chosenRecipe"));
+        console.log(values);
         for(let i=0;i<values.length;i++){
             if(values[i]==selectedElement.getAttribute("attribute")){
-                values.splice(i,1);
-                localStorage.setItem("chosenRecipe",JSON.stringify(values))
+                console.log("zou moeten verwijderen?")
+                // values.splice(i,1);
+                // localStorage.setItem("chosenRecipe",JSON.stringify(values))
             }
         }
     }
