@@ -9,7 +9,7 @@ let foodFetch = async () => {
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                groceryListLoop(data); // date Problems
+                groceryListLoop(data,a); // date Problems
 
 
             });
