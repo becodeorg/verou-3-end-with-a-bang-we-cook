@@ -17,6 +17,7 @@ import {
 
 const mainElement = document.querySelector("main");
 
+
 let groceryListLoop = (data) => {
     for (let l = 0; l < data.recipe.label[l].length; l++) {
         // create groceryList Body
@@ -32,17 +33,11 @@ let groceryListLoop = (data) => {
         // create date Holder
         const date = createDivElement();
         date.className = ("date");
-        date.innerText = addEveryWeekDay()[l];
         groceryListBody.appendChild(date);
-        ingredientsLoop(groceryListBody, data);
+        date.innerHTML = addEveryWeekDay()[l];
+        console.log(date);
     }
-}
-
-// ingredients element LOOP
-let ingredientsLoop = (groceryListBody, data) => {
-    // create a loop for ingredients
     for (let i = 0; i < data.recipe.ingredients.length; i++) {
-
         // create ingredientsHolder
         const ingredientsHolder = createUlElement();
         ingredientsHolder.className = ("ingredientsHolder");
@@ -68,5 +63,10 @@ let ingredientsLoop = (groceryListBody, data) => {
     }
 
 }
+
+
+
+
+
 
 export default groceryListLoop;

@@ -11,7 +11,7 @@ fetch(values[a]) //
     
     });
 }
-// bigList(data); // can not put in fetch.... must be one list
+// bigList(data); // can not put in fetch.... must be single list
 
 
 
