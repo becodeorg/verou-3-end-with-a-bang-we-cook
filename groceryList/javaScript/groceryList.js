@@ -32,8 +32,9 @@ let groceryListLoop = (data) => {
         // create date Holder
         const date = createDivElement();
         date.className = ("date");
-        date.innerText = addEveryWeekDay()[l];
+        date.innerText = addEveryWeekDay()[+l];
         groceryListBody.appendChild(date);
+        console.log(date);
         ingredientsLoop(groceryListBody, data);
     }
 }

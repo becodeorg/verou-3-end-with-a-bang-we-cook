@@ -3,7 +3,7 @@ import groceryListLoop from "./javaScript/groceryList.js"
 
 let values=JSON.parse(localStorage.getItem("chosenRecipe"));
 for (let a = 0; a < values.length; a++){
-fetch(values[a]) // 
+await fetch(values[a]) // 
     .then(response => response.json())
     .then(data => {
         console.log(data);
